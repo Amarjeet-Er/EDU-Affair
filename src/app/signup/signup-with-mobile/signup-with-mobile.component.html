@@ -1,0 +1,89 @@
+<div id="wrapper">
+    <mat-toolbar color="primary">
+        <button mat-icon-button routerLink="/vrifywithemail">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <span> Registration </span>
+        <span></span>
+    </mat-toolbar>
+
+    <div id="box">
+        <form [formGroup]="regForm" id="from_area">
+
+            <br><br>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput placeholder="Enter your name" formControlName="Name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Mobile</mat-label>
+                <input type="number" matInput placeholder="Enter your Mobile no" formControlName="MobileNo">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Institute </mat-label>
+                <mat-select placeholder="Select Institute" formControlName="Inst_id"
+                    (valueChange)="get_inst_id_by_course($event)">
+                    <mat-option *ngFor="let institute of Institutes" [value]="institute?.Inst_Id">{{
+                        institute?.companyName }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Course </mat-label>
+                <mat-select placeholder="Select State" formControlName="Course">
+                    <mat-option *ngFor="let course of courses" [value]="course?.Id">{{ course?.Course }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Your College State</mat-label>
+                <input #input1 type="text" placeholder="Type 1st chracters to search." matInput formControlName="State"
+                    [matAutocomplete]="auto1" (keyup)="onSelect(input1)" (focus)="onSelect(input1)">
+                <mat-autocomplete requireSelection #auto1="matAutocomplete">
+                    <mat-option *ngFor="let state of statesAndUTsFilter" [value]="state">{{state}}</mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Your College Name</mat-label>
+                <input formControlName="College" #collageVal type="text" placeholder="Type 1st chracters to search."
+                    matInput [matAutocomplete]="auto" (input)="filterCalc(collageVal)" (focus)="filterCalc(collageVal)">
+                <mat-autocomplete requireSelection #auto="matAutocomplete">
+                    <mat-option *ngFor="let collage of filteredOptions"
+                        [value]="collage?.CollegeName">{{collage?.CollegeName}}</mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="Password" type="text" placeholder="Abc@1234"
+                    (keyup.enter)="onSubmit(collageVal.value)">
+
+                <mat-hint align="end" *ngIf="regForm.get('Password')?.errors?.['required']">
+                    Password is required
+                </mat-hint>
+
+                <mat-hint align="end" *ngIf="regForm.get('Password')?.errors?.['minlength']">
+                    Password must be at least 8 characters long
+                </mat-hint>
+                <mat-hint align="end" *ngIf="regForm.get('Password')?.errors?.['pattern']">
+                    Invalid password format
+                </mat-hint>
+
+            </mat-form-field>
+
+
+
+            <br><br>
+            <button class="btn" (click)="onSubmit(collageVal.value)">SignUp</button>
+            <br><br>
+
+
+            <span class="login">Do you have an account ? <a routerLink="/">Login</a></span>
+
+        </form>
+
+    </div>
+</div>

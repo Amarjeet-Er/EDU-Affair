@@ -1,0 +1,30 @@
+#wrapper {
+    width: 100%;
+    height: auto;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+}
+
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#head {
+    color: whitesmoke;
+    background-color: var(--color-1);
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+.example-header-image {
+    background-image: url('../../../assets/icon/upi.jpg');
+    background-size: cover;
+}
+
+h1 {
+    padding: 20px;
+}

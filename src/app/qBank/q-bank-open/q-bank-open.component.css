@@ -1,0 +1,14 @@
+#wrapper {
+    width: 100%;
+    height: auto;
+    background-color: #fafafa;
+    margin: 0px;
+  
+  }
+  
+  mat-toolbar {
+    display: flex;
+    color: whitesmoke;
+    justify-content: space-between;
+    background-color: #f19109;
+}

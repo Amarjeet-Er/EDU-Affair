@@ -1,0 +1,104 @@
+#wrapper {
+    width: 100%;
+    height: calc(100vh - 137px);
+    background-color: #dce3eb;
+    overflow: auto;
+}
+
+.titileCard {
+    width: 90%;
+    height: 40px;
+    margin: 20px auto 0px;
+    padding: 10px 0px;
+    border-left: 10px solid green;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.titileCard b {
+    font-size: 20px;
+}
+
+.cardlist {
+    width: calc(100% - 30px);
+    height: 100px;
+    background-color: #f7f6f4;
+    margin: 0px auto 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+}
+
+.videoarea {
+    width: calc(30% - 10px);
+    height: calc(100% - 10px);
+    padding: 5px;
+    float: left;
+}
+
+.content {
+    width: calc(70% - 20px);
+    height: calc(100% - 20px);
+    float: right;
+    padding: 10px;
+}
+
+.content p {
+    color: #000;
+    font-weight: bold;
+}
+
+.titile {
+    width: 100%;
+    height: 75%;
+}
+
+.star {
+    width: 100%;
+    height: 25px;
+    padding: 2px;
+}
+
+.star img {
+    position: relative;
+    top: 3px;
+}
+
+b {
+    float: right;
+
+    padding: 1px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.free {
+    color: whitesmoke;
+    background-color: green;
+}
+
+.free mat-icon {
+    color: whitesmoke;
+}
+
+.paid {
+    color: #ffd72e;
+    background-color: #ea285b;
+}
+
+.PaymentPay {
+    color: whitesmoke;
+    background-color: #ea285b;
+}
+
+.PaymentPay mat-icon {
+    color: whitesmoke;
+}
+
+b mat-icon {
+    position: relative;
+    top: 5px;
+    color: #ffe35a;
+}

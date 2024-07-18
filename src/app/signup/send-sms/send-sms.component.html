@@ -1,0 +1,17 @@
+<div id="wrapper">
+    <div id="imgarea">
+        <img src="../../assets/icon/otpimg2.jpg" alt="">
+    </div>
+    
+        <div id="box">
+            <form id="from_area"  class="inputField">
+                <br><br>
+               
+            
+                <label>Let`s get you started</label>
+               <input class="mobileno" #email type="text" placeholder="Enter Mobile" (keyup.enter)="SendOTP(email.value)">
+               <button (click)="SendOTP(email.value)">Send OTP</button>
+                </form>
+        </div>
+    
+    </div>

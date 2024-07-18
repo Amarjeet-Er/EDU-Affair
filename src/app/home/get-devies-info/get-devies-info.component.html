@@ -1,0 +1,29 @@
+<div id="wrapper">
+    <mat-toolbar>
+        <button mat-icon-button routerLink="/home">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <span>Your Devies ID </span>
+        <span></span>
+    </mat-toolbar>
+
+    <div id="content">
+        <h1> Devies Id</h1>
+        <div class="box">
+            {{devies_id}}
+        </div>
+        <br />
+        Model Name
+        <div class="box">
+            {{model_name}}
+        </div>
+        <br>
+        <div class="btnarea">
+            <button (click)="copyToClipboard()" mat-raised-button color="primary">Copy Text <img
+                    src="../../../assets/icon/copy.png" alt="" width="15px" height="15px">
+            </button>
+
+        </div>
+
+    </div>
+</div>

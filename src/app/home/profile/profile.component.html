@@ -1,0 +1,91 @@
+<div id="wrapper">
+  <mat-toolbar>
+    <button mat-icon-button routerLink="/home"><mat-icon>arrow_back</mat-icon></button>
+    <span>My Profile</span>
+    <span></span>
+  </mat-toolbar>
+  <div id="header">
+    <div class="imgarea">
+      <img alt="image" *ngIf="!profile_url"
+        [src]="profile_data.Profile ? img_url+profile_data.Profile : '../../../assets/icon/user.png' "
+        (click)="onProfile(profile.files)">
+
+      <img alt="image" *ngIf="profile_url" [src]="profile_url ? profile_url : '../../../assets/icon/user.png' "
+        (click)="onProfile(profile.files)">
+
+
+      <!-- profile -->
+      <br> <button *ngIf="isEdit !== true" mat-icon-button color="primary" (click)="onProfile(profile.click())">
+        <mat-icon style="color: whitesmoke;">edit</mat-icon>
+      </button>
+
+      <input hidden type="file" accept=".jpg,.png,.jpeg," #profile (change)="onProfile(profile.files)">
+
+    </div>
+
+    <div class="name">{{profile_data.name}}</div>
+  </div>
+
+  <div id="deatils">
+    <br>
+    <div class="persinal">
+      <h1>Personal Details </h1>
+      <button mat-raised-button style="background-color: var(--button); color: whitesmoke;" (click)="onEdit()">{{isEdit?
+        'Edit' : 'View'}}</button>
+    </div>
+
+    <form [formGroup]="profile_form" class="example-form">
+
+      <mat-form-field class="example-full-width" [appearance]="isEdit? 'fill' : 'outline'">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="Name" [readonly]="isEdit">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput formControlName="MobileNo" type="number" readonly (focus)="enableValidation('mobile')"
+          (blur)="disableValidation('mobile')">
+        <mat-hint *ngIf="!isMobile">This entity can not be edited</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="EmailId" readonly (focus)="enableValidation('email')"
+          (blur)="disableValidation('email')">
+        <mat-hint *ngIf="!isEmail">This entity can not be edited</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Course</mat-label>
+        <input matInput formControlName="CourseName" readonly (focus)="enableValidation('course')"
+          (blur)="disableValidation('course')">
+        <mat-hint *ngIf="!isCourse">This entity can not be edited</mat-hint>
+      </mat-form-field>
+
+      <br>
+      <h1> Other Details </h1>
+      <br>
+
+      <mat-form-field class="example-full-width" [appearance]="isEdit? 'fill' : 'outline'">
+        <mat-label>Country Name</mat-label>
+        <input matInput formControlName="CountryName" [readonly]="isEdit">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" [appearance]="isEdit? 'fill' : 'outline'" *ngIf="State">
+        <mat-label>College State</mat-label>
+        <input matInput formControlName="State" [readonly]="isEdit">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" [appearance]="isEdit? 'fill' : 'outline'">
+        <mat-label>College Name</mat-label>
+        <input matInput formControlName="College" [readonly]="isEdit">
+      </mat-form-field>
+
+
+      <button (click)="onUpdate()" *ngIf="!isEdit" class="btn">Submit</button>
+    </form>
+
+  </div>
+  <br>
+  <br>
+</div>

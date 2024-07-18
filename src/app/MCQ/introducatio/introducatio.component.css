@@ -1,0 +1,20 @@
+#wrapper{
+    width: 300px;
+}
+mat-toolbar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: var(--color-1);
+    color: whitesmoke;
+}
+p{
+    padding: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    color: #555; /* Darker text color for contrast */
+    margin-bottom: 20px; /* Add bottom margin for separation */
+    background-color: #f9f9f9; /* Light background color for better readability */
+    border-radius: 8px; /* Add rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

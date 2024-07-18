@@ -1,0 +1,33 @@
+<div id="wrapper">
+    <mat-toolbar>
+        <button mat-icon-button routerLink="/home">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <span> Validity Your Plan </span>
+        <button mat-icon-button></button>
+    </mat-toolbar>
+
+    <div id="content">
+        <div class="card-basic">
+            <div [ngClass]="(premium.Id % 2 === 0) ? 'card-header header-basic' : 'card-header header-premium'">
+                <h1>{{TimeDuration}} Month</h1>
+            </div>
+
+            <div class="card-body">
+                <h2>{{Price | currency :'INR' }} </h2>
+
+                <div class="card-element-hidden-basic">
+                    <ul class="card-element-container">
+                    </ul>
+                    <button [ngClass]="(premium.Id % 2 == 0) ? 'btn btn-basic' : 'btn btn-premium'">Start :
+                        {{start_date}}</button> <br>
+                    <button [ngClass]="(premium.Id % 2 != 0) ? 'btn btn-basic' : 'btn btn-premium'">End :
+                        {{EndDate}}</button><br>
+                    <button *ngIf="login_data.SubscriptionStatus == 0"
+                        [ngClass]="(premium.Id % 2 === 0) ? 'btn btn-basic' : 'btn btn-premium'">You subscription has
+                        been expriy on {{EndDate}} </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

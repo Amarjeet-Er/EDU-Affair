@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">EDU Affair</string>
+    <string name="title_activity_main">EDU Affair</string>
+    <string name="package_name">eduaffair.com</string>
+    <string name="custom_url_scheme">eduaffair.com</string>
+</resources>

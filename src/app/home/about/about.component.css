@@ -1,0 +1,45 @@
+#wrapper {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+mat-toolbar {
+    display: flex;
+    color: whitesmoke;
+    justify-content: space-between;
+    background-color: var(--color-1);
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    padding: 0 0px;
+}
+
+#content {
+    width: 90%;
+    height: calc(100vh - 90px);
+    overflow-x: auto;
+    margin: 30px auto;
+    text-align: justify;
+    font-size: 15px;
+    line-height: 25px;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    scrollbar-width: none;
+}
+
+.devloped {
+    color: red;
+    font-size: 25px;
+    padding: 10px 0px;
+    position: relative;
+    left: 20%;
+}
+
+
+img {
+    position: relative;
+    left: 20%;
+}

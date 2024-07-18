@@ -1,0 +1,32 @@
+#wrapper {
+    width: 100%;
+    height: auto;
+    background-color: #fafafa;
+}
+
+mat-toolbar {
+    display: flex;
+    color: whitesmoke;
+    justify-content: space-between;
+    background-color: var(--color-1);
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    padding: 0 0px;
+}
+#box {
+    height: calc(100vh - 60px);
+    overflow: auto;
+  }
+  
+.example-card {
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.example-header-image {
+    background-image: url('../../../assets/icon/physiolgy.png');
+    background-size: cover;
+}

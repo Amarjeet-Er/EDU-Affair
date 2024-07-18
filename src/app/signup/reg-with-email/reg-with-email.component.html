@@ -1,0 +1,19 @@
+<div id="wrapper">
+
+    <mat-toolbar>
+        <button mat-icon-button routerLink="/country"><mat-icon>arrow_back</mat-icon></button>
+    </mat-toolbar>
+
+    <div id="box">
+        <img src="../../assets/icon/otpimg2.jpg" alt="">
+        <form class="formBox">
+            <br><br>
+            <label>Let`s get you started</label>
+            <input class="mobileno" #email type="text" placeholder="Enter Email" (keyup.enter)="SendOTP(email.value)">
+            <br><br>
+            <div class="btn">
+                <button mat-raised-button color="primary" (click)="SendOTP(email.value)">Send OTP</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,164 @@
+/******************** css for home layout start **********************/
+mat-sidenav-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+
+
+.toolbar mat-toolbar {
+    background-color: var(--color-1);
+    height: 60px;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 3;
+}
+
+
+mat-sidenav {
+    width: 250px;
+    background-color: #fff;
+}
+
+.profile_card {
+    width: 100%;
+    height: 110px;
+    background-color: var(--color-1);
+    border-radius: 0px;
+    border-bottom-right-radius: 40px;
+}
+
+.imagearea {
+    width: 100%;
+    height: 50px;
+    padding-top: 20PX;
+    display: flex;
+    justify-content: center;
+}
+
+.imagearea img {
+    border-radius: 100%;
+    border: 1px solid white;
+}
+
+.name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 10px;
+}
+
+.name button {
+    position: relative;
+    top: -17px;
+}
+
+.name button mat-icon {
+    position: relative;
+    top: 1px;
+    color: whitesmoke;
+}
+
+
+.buynowcard {
+    background-color: #78abf7;
+}
+
+.buynowcard div {
+    width: 70%;
+    font-size: 15px;
+    line-height: 15px;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    color: #000000d0;
+    padding-left: 10px;
+}
+
+.buynowcard div a {
+    font-size: 12px;
+}
+
+.profile_card img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    border-radius: 100%;
+}
+
+#menuFooter {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+
+
+.profile_card mat-icon {
+    position: relative;
+    right: 0px;
+    top: -20px;
+    float: right;
+}
+
+
+.main {
+    width: 100%;
+    height: calc(100vh - 120px);
+    overflow:auto;
+    z-index: 1;
+}
+
+#footer {
+    height: 60px;
+    justify-content: space-between;
+    background-color: var(--color-1);
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+#footer mat-toolbar {
+    color: var(--color-1);
+    padding: 0px;
+
+}
+
+#footer button {
+    height: 50px;
+    line-height: 10px;
+    width: 25%;
+    padding: 0px 10px;
+    color: var(--color-1);
+    cursor: pointer;
+    border: none;
+}
+
+#footer button:hover {
+    color: #0f4290;
+    background-color: #b7cef2;
+}
+
+#footer button img {
+    width: 28px;
+}
+
+mat-hint {
+    font-size: 12px;
+}
+
+a span {
+    position: relative;
+    top: -8px;
+}
+
+.expireDate{
+    color: whitesmoke;
+    font-size: 16px;
+    position: relative;
+    top: 5px;
+}

@@ -1,0 +1,44 @@
+<div id="wrapper">
+  <mat-toolbar id="head">
+    <button mat-icon-button routerLink="/premiumDesc">
+      <mat-icon >keyboard_arrow_left</mat-icon>
+    </button>
+    <span>Payment Methods</span>
+    <span></span>
+  </mat-toolbar>
+
+  <mat-toolbar>
+    <span>{{premium_data.plan_name}} (Unlimited) </span>
+    <b>{{premium_data.total_amount | currency :'INR'}} </b>
+  </mat-toolbar>
+  <br>
+  <h1>UPI</h1>
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Pay by any UPI app</mat-card-title>
+      <mat-card-subtitle>use any UPI app on your phone to pay</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+    </mat-card-content>
+
+  </mat-card>
+  <h1>Cards</h1>
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Pay by any UPI app</mat-card-title>
+      <mat-card-subtitle>use any UPI app on your phone to pay</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+    </mat-card-content>
+
+  </mat-card>
+  <p>Angular v16 launched</p>
+  <button (click)="payNow()">Pay amount</button>
+  
+</div>

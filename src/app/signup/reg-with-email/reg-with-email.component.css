@@ -1,0 +1,47 @@
+#wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+mat-toolbar {
+    display: flex;
+    color: whitesmoke;
+    justify-content: space-between;
+    background-color: var(--color-1);
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    padding: 0 0px;
+}
+
+#box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#box>img {
+    width: 100%;
+    height: 200px;
+}
+.formBox{
+    width: 100%;
+    padding: 20px;
+}
+.mobileno {
+    width: calc(100% - 40px);
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.btn{
+    text-align: center;
+}
+.btn>button{
+    background-color: var(--button);
+    height: 45px;
+}

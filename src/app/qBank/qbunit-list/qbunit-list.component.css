@@ -1,0 +1,47 @@
+#wrapper {
+    width: 100%;
+    height: auto;
+    background-color: #fafafa;
+    margin: 0px;
+  
+  }
+  mat-toolbar {
+    display: flex;
+    color: whitesmoke;
+    justify-content: space-between;
+    background-color: #f19109;
+}
+
+  
+  .titileCard {
+    width: 80%;
+    height: 40px;
+    margin: 10px auto;
+    padding: 10px;
+    line-height: 35px;
+    border-left: 10px solid greenyellow;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+  
+  .titileCard B {
+    font-size: 30px;
+  }
+
+  #box{
+    height: calc(100vh - 200px);
+    overflow-x: auto;
+  }
+
+  .example-card{
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    
+  }
+
+  .example-header-image {
+    background-image: url('../../../assets/icon/unit.png');
+    background-size: cover;
+  }

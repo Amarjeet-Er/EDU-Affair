@@ -1,0 +1,139 @@
+#wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #fafafa;
+    margin: 0px;
+    overflow-x: auto;
+}
+
+mat-toolbar {
+    display: flex;
+    color: whitesmoke;
+    justify-content: space-between;
+    background-color: var(--color-1);
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    padding: 0 0px;
+}
+
+
+#qustionarea {
+    width: calc(90%);
+    margin: 0px auto;
+    height: calc(100vh - 100px);
+    padding: 20px 5px;
+}
+
+.qustion {
+    width: 100%;
+}
+
+.qustion span {
+    display: flex;
+    font-size: 15px;
+}
+
+.box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-left: -20px;
+}
+
+.opction {
+    width: calc(100% - 55px);
+    height: auto;
+    background-color: #cddce7;
+    margin: 20px 0px;
+    border-radius: 50px;
+    font-size: 15px;
+    /* padding-left: 55px; */
+    padding: 20px 5px 20px 55px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.btn {
+    position: relative;
+    background-color: var(--color-1);
+    font-weight: bold;
+    font-size: 22px;
+    left: 50px;
+}
+
+.opction p {
+    font-size: 15px;
+}
+
+.opction b {
+    font-size: 20px;
+}
+
+.opction b {
+    font-weight: normal;
+    color: #5a6269;
+}
+
+.btnarea {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.btnarea button {
+    height: 50px;
+    padding: 5px 15px 10px 15px;
+    background-color: var(--button);
+    font-size: 18px;
+    color: whitesmoke;
+    box-shadow: 0 1px 2px #757573;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+.btnarea mat-icon {
+    position: relative;
+    top: 7px;
+}
+
+.correct {
+    background-color: green;
+    color: whitesmoke;
+    width: calc(100% - 55px);
+    height: auto;
+    margin: 20px 0px;
+    border-radius: 50px;
+    font-size: 15px;
+    padding: 20px 5px 20px 55px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.correct button {
+    background-color: var(--color-1);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.correct b {
+    font-weight: normal;
+    color: white;
+}
+
+.correct p {
+    font-size: 15px;
+}
+
+.incorrect {
+    background-color: red;
+    color: whitesmoke;
+}
+

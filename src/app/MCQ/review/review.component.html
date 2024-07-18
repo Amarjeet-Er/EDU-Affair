@@ -1,0 +1,67 @@
+<div id="wrapper">
+    <mat-toolbar>
+        <button mat-icon-button routerLink="/mcqSubject/mcqUnit"><mat-icon>arrow_back</mat-icon></button>
+        <span> TEST REVIEW </span>
+        <span></span>
+    </mat-toolbar>
+    <div id="qustionarea">
+        <div class="qustion">
+            <span><b>{{qustion_no+1}}.</b> &nbsp; <p [innerHTML]="one_mcq_data.QuestionName"></p> </span>
+        </div>
+        <div class="qyt">
+            <div class="box">
+                <button mat-mini-fab class="btn">A</button>
+                <div [ngClass]="{
+                    'correct': one_mcq_data.Marks  === one_mcq_data.OptionA && one_mcq_data.CorrectAns === one_mcq_data.OptionA,
+                     'incorrect': one_mcq_data.Marks === one_mcq_data.OptionA && one_mcq_data.CorrectAns !== one_mcq_data.OptionA,
+                     'good': one_mcq_data.Marks  !== one_mcq_data.OptionA && one_mcq_data.CorrectAns === one_mcq_data.OptionA
+}" class="opction">
+                    {{one_mcq_data.OptionA}}
+                </div>
+            </div>
+
+            <div class="box">
+                <button class="btn" mat-mini-fab>B</button>
+                <div [ngClass]="{
+                    'correct': one_mcq_data.Marks  === one_mcq_data.OptionB && one_mcq_data.CorrectAns === one_mcq_data.OptionB,
+                 'incorrect': one_mcq_data.Marks === one_mcq_data.OptionB && one_mcq_data.CorrectAns !== one_mcq_data.OptionB,
+                 'good': one_mcq_data.Marks  !== one_mcq_data.OptionB && one_mcq_data.CorrectAns === one_mcq_data.OptionB
+                 
+                 }" class="opction">
+                    &nbsp; {{one_mcq_data.OptionB}}
+                </div>
+            </div>
+
+            <div class="box">
+                <button class="btn" mat-mini-fab>C</button>
+                <div [ngClass]="{
+                    'correct': one_mcq_data.Marks  === one_mcq_data.OptionC && one_mcq_data.CorrectAns === one_mcq_data.OptionC,
+                     'incorrect': one_mcq_data.Marks === one_mcq_data.OptionC && one_mcq_data.CorrectAns !== one_mcq_data.OptionC,
+                     'good': one_mcq_data.Marks  !== one_mcq_data.OptionC && one_mcq_data.CorrectAns === one_mcq_data.OptionC
+                    }" class="opction">
+                    &nbsp; {{one_mcq_data.OptionC}}</div>
+            </div>
+            <div class="box">
+                <button mat-mini-fab class="btn">D</button>
+                <div class="opction"
+                    [ngClass]="{
+                        'correct': one_mcq_data.Marks  === one_mcq_data.OptionD && one_mcq_data.CorrectAns === one_mcq_data.OptionD,
+                         'incorrect': one_mcq_data.Marks === one_mcq_data.OptionD && one_mcq_data.CorrectAns !== one_mcq_data.OptionD,
+                         'good': one_mcq_data.Marks  !== one_mcq_data.OptionD && one_mcq_data.CorrectAns === one_mcq_data.OptionD}"
+                    class="opction">
+                    &nbsp; {{one_mcq_data.OptionD}}</div>
+            </div>
+        </div>
+
+        <div class="btnarea">
+
+            <button *ngIf="qustion_no+1 != mcq_data.length " color="primary" (click)="OnNext()">
+                NEXT <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+
+
+        </div>
+
+    </div>
+
+</div>

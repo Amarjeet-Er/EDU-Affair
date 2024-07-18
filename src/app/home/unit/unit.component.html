@@ -1,0 +1,20 @@
+<div id="wrapper">
+
+    <div class="titileCard">
+        <button mat-icon-button routerLink="/home/subject/">
+            <mat-icon>arrow_back</mat-icon>
+        </button> 
+        <b>Unit</b>
+        <button mat-icon-button></button>
+    </div>
+
+    <div id="box">
+        <mat-card class="example-card" *ngFor="let unit of unit_data" (click)="OnVideos(unit.Id)">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{unit.Unit}}</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+    </div>
+</div>

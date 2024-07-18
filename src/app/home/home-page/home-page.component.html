@@ -1,0 +1,109 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidebar mode="over">
+        <mat-card class="profile_card">
+            <div class="imagearea">
+                <img [src]="profile == '' ? '../../../assets/icon/user.png' : img_url+profile" alt="">
+            </div>
+
+            <div class="name"> &nbsp; &nbsp; {{name}} &nbsp; <button mat-icon-button color="primary"
+                    (click)="sidebar.toggle()" (click)="onProfile()"><mat-icon>edit</mat-icon></button> </div>
+        </mat-card>
+
+        <mat-nav-list>
+            <mat-toolbar class="buynowcard" (click)="sidebar.toggle()" (click)="Plan()">
+                <div>
+                    Your Plan Validity
+                    <a *ngIf="SubscriptionStatus == 0">Buy Now </a>
+                </div>
+                <mat-icon>navigate_next</mat-icon>
+            </mat-toolbar>
+            <br>
+
+            <a mat-list-item (click)="sidebar.toggle()" [routerLink]="['/contactus']">
+                <img src="../../../assets/icon/contact-us.png" alt="" width="30px" height="30px">
+                &nbsp; <span>Contact Us</span>
+            </a>
+
+            <a mat-list-item (click)="sidebar.toggle()" [routerLink]="['/about']">
+                <img src="../../../assets/icon/about-us.png" alt="" width="30px" height="30px">
+                &nbsp; <span>About Us</span>
+            </a>
+
+            <a mat-list-item (click)="sidebar.toggle()" [routerLink]="['/term']">
+                <img src="../../../assets/icon/term-cond.png" alt="" width="30px" height="30px">
+                &nbsp; <span>Terms & Conditions</span>
+            </a>
+
+            <a mat-list-item (click)="sidebar.toggle()" [routerLink]="['/chnagePassword']">
+                <img src="../../../assets/icon/change-pass.png" alt="" width="30px" height="30px">
+                &nbsp; <span>Change Password</span>
+            </a>
+
+            <a mat-list-item (click)="sidebar.toggle()" [routerLink]="['/getdevies']">
+                <img src="../../../assets/icon/device-id.png" alt="" width="30px" height="30px">
+                &nbsp; <span>Get Your Devies ID</span>
+            </a>
+
+            <a mat-list-item (click)="sidebar.toggle()"
+                href="whatsapp://send?abid=phonenumber&text=https://play.google.com/store/apps/details?id=tbrain.in.medical.eduapp&hl=en_IN&gl=US">
+                <img src="../../../assets/icon/share-app.png" alt="" width="30px" height="30px">
+                &nbsp; <span>Share With Friends</span>
+            </a>
+
+            <div id="menuFooter">
+                <a mat-list-item (click)="sidebar.toggle()" (click)="logout()">
+                    <mat-icon style="transform: rotate(90deg); color: red;">save_alt</mat-icon>
+                    &nbsp; <span style="color: red;">Logout</span> </a>
+                <!-- 
+                <a mat-list-item>
+                    <img src="../../../assets/turnaningBrain Logo.webp" alt="" width="30px" height="30px">
+                    &nbsp; <span> App Version : 2.6</span>
+                </a> -->
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content>
+        <div class="content">
+            <div class="toolbar">
+                <mat-toolbar>
+                    <button mat-icon-button (click)="sidebar.toggle()">
+                        <mat-icon style="color: white;">notes</mat-icon>
+                    </button>
+                </mat-toolbar>
+            </div>
+
+            <div class="main">
+                <main>
+                    <router-outlet></router-outlet>
+                </main>
+            </div>
+
+            <div id="footer">
+                <mat-toolbar>
+                    <button [routerLink]="['/home']">
+                        <mat-icon>home</mat-icon>
+                        <br><mat-hint>Home</mat-hint>
+                    </button>
+
+                    <button [routerLink]="['/home/subject']">
+                        <mat-icon>video_library</mat-icon><br>
+                        <mat-hint>Videos</mat-hint>
+                    </button>
+
+                    <button [routerLink]="['/mcqSubject']">
+                        <mat-icon>assignment</mat-icon><br>
+                        <mat-hint>Test</mat-hint>
+                    </button>
+
+                    <button [routerLink]="['/premiumSbject']">
+                        <img src="../../../assets/icon/go-premium.png" alt=""> <br>
+                        <mat-hint>Go Premium</mat-hint>
+                    </button>
+
+                </mat-toolbar>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

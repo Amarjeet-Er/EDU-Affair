@@ -1,0 +1,59 @@
+#wrapper {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+mat-toolbar{
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    justify-content: right;
+}
+
+#imgarea {
+    width: 250px;
+    height: 250px;
+}
+
+.res {
+    width: 300px;
+    position: relative;
+    top: -80px;
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#contentarea {
+    width: 280px;
+    height: 230px;
+    padding: 10px;
+    background-color: #fdfefa;
+}
+
+#contentarea h1 {
+    width: 280px;
+    text-align: center;
+    color: rgb(6, 59, 6);
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#contentarea h3 {
+    width: 280px;
+    text-align: center;
+    color: rgb(22, 22, 22);
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#contentarea p{
+    width: 250px;
+    padding: 0px 15px;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+    line-height: 23px;
+}

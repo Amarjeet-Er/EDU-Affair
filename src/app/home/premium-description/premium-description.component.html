@@ -1,0 +1,46 @@
+<div id="wrapper">
+    <mat-toolbar id="head">
+        <button mat-icon-button routerLink="/premium">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <span>Purchase Summary</span>
+        <span></span>
+    </mat-toolbar>
+
+    <div id="mainarea">
+        <table>
+            <tr class="tdno">
+                <td style="font-weight: bold; font-size: 16px;" colspan="2">Your price summary</td>
+
+            </tr>
+            <tr class="tdno">
+                <td>Plan Duration</td>
+                <td style="text-align: right;">{{premium_data.OneMonths}}</td>
+
+            </tr>
+            <tr class="tdno">
+                <td>Feature</td>
+                <td style="text-align: right;">{{premium_data.Feature1}}<br>{{premium_data.Feature2}} <br>
+                    {{premium_data.Feature3}}</td>
+            </tr>
+
+            <tr class="finalprice">
+                <td>Final Price</td>
+                <td style="text-align: right;">{{premium_data.Price1months | currency : 'INR'}}</td>
+            </tr>
+        </table>
+
+        <div id="footers">
+            <div class="notification">
+                <section class="example-section" [formGroup]="toppings">
+                    <p><mat-checkbox formControlName="condations">By submitting you confirm that you accept our terms &
+                            conditions and have read our <b routerLink="/term">privacy policy</b> .</mat-checkbox></p>
+                </section>
+            </div>
+            <button class="paynow" (click)="payNow(premium_data)">
+                Pay now {{premium_data.Price1months | currency : 'INR'}}
+            </button>
+        </div>
+    </div>
+
+</div>

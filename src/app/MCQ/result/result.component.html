@@ -1,0 +1,19 @@
+<div id="wrapper">
+    <mat-toolbar>
+        <button mat-mini-fab color="warn" mat-dialog-close> <mat-icon>close</mat-icon></button>
+    </mat-toolbar>
+    <div id="imgarea">
+        <img src="../.../../../../assets/icon/cup.jpeg" alt="" width="300px" height="100%">
+        <div class="res" *ngIf="score < 40">Poor</div>
+        <div class="res" *ngIf="score >= 40 && score < 65">Good</div>
+        <div class="res" *ngIf="score >= 65">Excellent</div>
+    </div>
+
+    <div id="contentarea">
+        <h1> {{score}}% Score</h1>
+        <h3>Quiz completed successfully.</h3>
+        <p>Out of {{total_qty}} questions <br> your <b style="color: rgb(14, 73, 14);"> {{correct}} </b> answers are <b
+                style="color: rgb(14, 73, 14);"> correct </b>
+            <img src="../../../assets/icon/macreelicon.png" alt="" width="250px" height="80px">
+    </div>
+</div>

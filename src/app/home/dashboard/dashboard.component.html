@@ -1,0 +1,112 @@
+<div id="wrapper">
+
+  <div id="banner">
+    <div id="slider">
+      <swiper [spaceBetween]="30" [centeredSlides]="true" [autoplay]="{
+              delay: 5000,
+              disableOnInteraction: false
+            }" [pagination]="{
+              clickable: true
+            }" [grabCursor]="true" [navigation]="true" class="mySwiper">
+
+        <ng-template swiperSlide *ngFor="let slider of slider_data"> <img class="slider_img"
+            src="{{imageUrl}}{{slider?.Path}}" width="100%" height="100%">
+        </ng-template>
+
+      </swiper>
+    </div>
+  </div>
+
+  <!-- for free video open  -->
+  <div class="titileCard">
+    <b style="color: green;">Free Videos</b>
+  </div>
+
+  <div id="videos">
+    <swiper [spaceBetween]="30" [centeredSlides]="true" [autoplay]="{
+      delay: 3000,
+      disableOnInteraction: false
+    }" [grabCursor]="true" [navigation]="true" class="mySwiper">
+
+      <ng-template id="videos" swiperSlide *ngFor="let free_video of free_video_data">
+        <div class="imgarea">
+          <img src="../../../assets/icon/video-slide.png" alt="">
+        </div>
+
+        <div (click)="OnFreeVideo(free_video)">
+          <div class="contentarea">
+            <div class="subjectTitile">{{free_video?.SubjectName}}</div>
+            <div class="videotitile">
+              {{free_video?.VideoTitle}}
+            </div>
+            <div class="star">
+              <img src="../../../assets/icon/star.png" alt="">
+              4.8 &nbsp; &nbsp; | Free Videos
+            </div>
+
+          </div>
+
+        </div>
+      </ng-template>
+    </swiper>
+
+  </div>
+  <br>
+
+  <!-- for free video close -->
+
+  <div class="titileCard">
+    <b>Suggested Videos</b>
+  </div>
+
+  <div id="videos">
+    <swiper [spaceBetween]="30" [centeredSlides]="true" [autoplay]="{
+      delay: 6000,
+      disableOnInteraction: false
+    }" [grabCursor]="true" [navigation]="true" class="mySwiper">
+
+      <ng-template id="videos" swiperSlide *ngFor="let Suggest of Suggestionvideo">
+        <div (click)="onSuggesg(Suggest)">
+          <div class="contentarea">
+            <div class="subjectTitile">{{Suggest?.SubjectName}}</div>
+            <div class="videotitile">
+              {{Suggest?.VideoTitle}}
+            </div>
+            <div class="star">
+              <img src="../../../assets/icon/star.png" alt="">
+              4.8 &nbsp; &nbsp; | Suggested Videos
+            </div>
+
+          </div>
+          <div class="imgarea">
+            <img src="../../../assets/icon/video-slide.png" alt="">
+          </div>
+        </div>
+      </ng-template>
+    </swiper>
+
+  </div>
+  <br>
+  <div class="titileCard">
+    <b>Suggested MCQ Test</b>
+  </div>
+
+  <div id="videos" (click)="onMCQ()">
+    <div class="contentarea">
+      <div lass="subjectTitile">{{suggestMCQ_sub}}</div>
+      <div class="videotitile">
+        {{suggestMCQ_title}}
+      </div>
+      <div class="star">
+        <img src="../../../assets/icon/star.png" alt="">
+        4.7 &nbsp; &nbsp; | MCQ test
+      </div>
+
+    </div>
+
+    <div class="imgarea"><img src="../../../assets/icon/test.png" alt="" width="100%" height="100%">
+    </div>
+
+  </div>
+
+</div>

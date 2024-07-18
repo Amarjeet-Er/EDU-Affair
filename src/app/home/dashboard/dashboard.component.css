@@ -1,0 +1,95 @@
+#wrapper {
+    width: calc(100% - 20px);
+    background-color: whitesmoke;
+    padding: 10px;
+}
+
+#banner {
+    width: 100%;
+    height: 220px;
+    border-radius: 10px;
+}
+
+.slider_img {
+    height: 200px;
+    border-radius: 10px;
+}
+
+#videos {
+    width: 100%;
+    height: 90px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+
+.titileCard {
+    width: 90%;
+    height: 40px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-left: 5px solid var(--color-1);
+    border-radius: 10px;
+}
+
+.imgarea {
+    width: 90px;
+    height: 90px;
+    float: left;
+}
+.imgarea img{
+    width: 100%;
+    height: 100%;
+}
+
+.contentarea {
+    width: calc(100% - 100px);
+    height: calc(100% - 10px);
+    float: right;
+    padding: 5px 5px;
+}
+
+.subjectTitile{
+    color: #183867;
+    font-weight: bold;
+}
+
+.videotitile{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.star {
+    width: 100%;
+    height: 25px;
+}
+
+.star img {
+    position: relative;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+
+.titileCard b {
+    line-height: 40px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+
+::ng-deep .swiper-button-next,
+::ng-deep .swiper-button-prev {
+    color: #f4f4f4;
+    background-blend-mode: color-dodge;
+    opacity: 0 !important;
+
+}

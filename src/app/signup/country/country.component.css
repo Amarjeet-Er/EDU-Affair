@@ -1,0 +1,51 @@
+#wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+mat-toolbar {
+    display: flex;
+    color: whitesmoke;
+    justify-content: space-between;
+    background-color: var(--color-1);
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 0px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    height: var(--mat-toolbar-standard-height);
+}
+
+#header {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.box {
+    width: 80%;
+    height: auto;
+    position: relative;
+    margin: 0px auto;
+}
+
+.btn {
+    width: 80%;
+    height: 50px;
+    border-radius: 50px;
+    background-color: var(--button);
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: whitesmoke;
+    position: relative;
+    left: 10%;
+}

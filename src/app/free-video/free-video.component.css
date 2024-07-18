@@ -1,0 +1,187 @@
+
+#wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+
+
+#videoarea {
+    width: 100%;
+    height: 280px;
+    z-index: 0;
+}
+
+
+.description {
+    width: calc(100% - 40px);
+    height: 90px;
+    padding: 5px 20px;
+    background-color: #f2f2f2;
+}
+
+.description p {
+    width: 100%;
+    line-height: 16px;
+    text-align: left;
+    color: #3b3b3b;
+}
+
+.title {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+}
+
+#videolistbox {
+    width: 100%;
+    height: calc(100vh - 380px);
+    overflow-x: auto;
+}
+
+
+.content {
+    width: calc(70% - 20px);
+    height: calc(100% - 20px);
+    float: right;
+    padding: 10px;
+}
+
+.card_img {
+    width: calc(30% - 10px);
+    height: calc(100% - 10px);
+    padding: 5px;
+    float: left;
+}
+
+
+.titile {
+    width: 100%;
+    height: 75%;
+}
+
+.star {
+    width: 100%;
+    height: 25px;
+    padding: 2px;
+}
+
+.star img {
+    position: relative;
+    top: 3px;
+}
+
+
+.cardlist {
+    width: 90%;
+    height: 100px;
+    background-color: #f7f6f4;
+    margin: 20px auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+}
+
+
+
+.content {
+    width: calc(70% - 20px);
+    height: calc(100% - 20px);
+    float: right;
+    padding: 10px;
+}
+
+.content p {
+    color: #000;
+    font-weight: bold;
+}
+
+
+b {
+    float: right;
+
+    padding: 1px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.free {
+    color: whitesmoke;
+    background-color: green;
+}
+
+.free mat-icon {
+    color: whitesmoke;
+}
+
+.paid {
+    color: #ffd72e;
+    background-color: #ea285b;
+}
+
+.PaymentPay {
+    color: whitesmoke;
+    background-color: #ea285b;
+}
+
+.PaymentPay mat-icon {
+    color: whitesmoke;
+}
+
+b mat-icon {
+    position: relative;
+    top: 5px;
+    color: #ffe35a;
+}
+
+
+
+@media (max-width: 600px) {
+    .notshared {
+        width: 100%;
+        height: 18%;
+        position: fixed;
+        top: 0;
+        background-color: transparent;
+    }
+    .hidefullscrreen {
+        width: 120px;
+        height: 40px;
+        z-index: 2;
+        position: relative;
+        top: -50px;
+        float: right;
+    }
+
+}
+
+@media (min-width: 601px) {
+    .notshared {
+        width: 100%;
+        height: 18%;
+        background-color: transparent;
+        position: fixed;
+        top: 0;
+    }
+
+    #wrapper {
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+    }
+
+    #videoarea {
+        width: 100%;
+        height: 100vh;
+        z-index: 0;
+    }
+
+
+    .hidefullscrreen {
+        width: 200px;
+        height: 40px;
+        position: relative;
+        top: -50px;
+        float: right;
+    }
+
+
+}

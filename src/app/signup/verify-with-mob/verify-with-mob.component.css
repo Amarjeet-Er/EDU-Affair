@@ -1,0 +1,48 @@
+#wrapper {
+    width: 80%;
+    margin: 0px auto;
+    background-color: #fff;
+}
+
+
+input {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 5px 2px;
+    background-color: whitesmoke;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.resend {
+    background-color: #30517a;
+    color: whitesmoke;
+    padding: 5px 10PX;
+    border-radius: 10px;
+    margin: 10px 5px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+}
+
+.btn {
+    width: 80%;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #30517a;
+    font-size: 25px;
+    color: whitesmoke;
+    position: relative;
+    left: 10%;
+}
