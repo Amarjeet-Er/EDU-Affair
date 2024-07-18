@@ -128,19 +128,17 @@ export class CrudService {
   get_QBlist(data: any) {
     return this.http.post(`${this.base_url}AllQbank`, data)
   }
-  
+
   get_packages(data: any) {
     return this.http.post(`${this.base_url}StudentSelectSubscription`, data)
   }
 
 
-
+  ////////// yaha tak complate ho geya hai but forget password ko chhor kar ab niche ka karna hai /////////
+ 
 
 
   
-
-  
-
   get_user() {
     return this.http.get(`${this.base_url}StudentApi`)
   }
