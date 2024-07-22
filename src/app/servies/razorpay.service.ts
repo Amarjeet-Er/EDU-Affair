@@ -16,7 +16,7 @@ export class RazorpayService {
 
 
   createOrderLive(amount: string): Observable<any> {
-    return this.http.post<any>(`${this.baseUrlLive}Payment?totalAmount=${amount}`, { amount });
+    return this.http.get<any>(`${this.baseUrlLive}Payment?totalAmount=${amount}`, {});
 
 
   }
@@ -40,14 +40,14 @@ export class RazorpayService {
 
   PaymentSuccessInsert(data: any) {
     console.log(data);
-    return this.http.post(`https://turningbrain.in/api/Payment`, data)
+    return this.http.post(`https://eduaffair.in/api/Payment`, data)
   }
 
-  
+
   PaymentFaildInsert(data: any) {
     console.log(data);
-    return this.http.post(`https://turningbrain.in/api/Payment`, data)
+    return this.http.post(`https://eduaffair.in/api/Payment`, data)
   }
 
 
-}
+} 

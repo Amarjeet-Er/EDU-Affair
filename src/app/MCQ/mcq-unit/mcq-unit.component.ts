@@ -101,7 +101,7 @@ export class McqUnitComponent implements OnInit {
       const deviesId = await Device.getId();
       const info = await Device.getInfo();
       // this.updateDeviesId(deviesId.identifier, info.model)
-      if (deviesId.identifier !== this.login.DeviceId) {
+      if (deviesId.identifier == this.login.DeviceId) {
         this._shared.mcqType.next('mix')
         this._router.navigate(['/mcqList'])
 
@@ -118,7 +118,7 @@ export class McqUnitComponent implements OnInit {
       const deviesId = await Device.getId();
       const info = await Device.getInfo();
       // this.updateDeviesId(deviesId.identifier, info.model)
-      if (deviesId.identifier !== this.login.DeviceId) {
+      if (deviesId.identifier == this.login.DeviceId) {
         localStorage.setItem('unitid', JSON.stringify(unitid))
         this._shared.mcqType.next('unit')
         this._router.navigate(['/mcqList'])

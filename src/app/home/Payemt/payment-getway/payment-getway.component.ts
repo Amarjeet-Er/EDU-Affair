@@ -49,11 +49,11 @@ export class PaymentGetwayComponent {
     const options = {
       key: 'rzp_test_YGORtbwcCRzFxD',
       amount: amount,
-      description: 'Turning Brain',
+      description: 'EDU Affair',
       image: 'https://turningbrain.in/website/assets/images/logo.png',
       order_id: order_id,
       currency: 'INR',
-      name: 'Turning Brain',
+      name: 'EDU Affair',
       prefill: {
         name: 'Akhilesh Kumar',
         email: 'akhileshkr1098@gmail.com',
@@ -125,11 +125,11 @@ export class PaymentGetwayComponent {
     const options = {
       key: 'rzp_test_YGORtbwcCRzFxD',
       amount: amount,
-      description: 'Turning Brain',
+      description: 'EDU Affair',
       image: 'https://turningbrain.in/website/assets/images/logo.png',
       order_id: order_id.toString(),
       currency: 'INR',
-      name: 'Turning Brain',
+      name: 'EDU Affair',
       prefill: {
         name: 'Akhilesh Kumar',
         email: 'akhileshkr1098@gmail.com',

@@ -24,6 +24,8 @@ export class PremiumDescriptionComponent implements OnInit {
   orderId: any
   subscription_data: any
   payData: any
+  login: any;
+  loginData: any;
   constructor(
     private _shared: SharedService,
     private _crud: CrudService,
@@ -35,6 +37,10 @@ export class PremiumDescriptionComponent implements OnInit {
     this.login_data = localStorage.getItem('userData')
     const data = JSON.parse(this.login_data)
     this.user_data = data
+
+    this.login = localStorage.getItem('loginData')
+    this.loginData = JSON.parse(this.login)
+
   }
 
   toppings = this._formBuilder.group({
@@ -84,14 +90,14 @@ export class PremiumDescriptionComponent implements OnInit {
 
   async payWithLive(order_id: string, amount: string) {
     const options = {
-      // key: 'rzp_test_YGORtbwcCRzFxD', //test
-      key: 'rzp_live_nrumEje16i8mje', //live
+      key: 'rzp_test_YGORtbwcCRzFxD', //test
+      // key: 'rzp_live_nrumEje16i8mje', //live
       amount: amount,
-      description: 'Turning Brain',
-      image: 'https://turningbrain.in/website/assets/images/logo.png',
+      description: 'EDU Affair',
+      // image: 'https://turningbrain.in/website/assets/images/logo.png',
       order_id: order_id,
       currency: 'INR',
-      name: 'Turning Brain',
+      name: 'EDU Affair',
       prefill: {
         name: this.user_data.Name,
         email: this.user_data.EmailId,
@@ -151,6 +157,7 @@ export class PremiumDescriptionComponent implements OnInit {
       OrderId: res.metadata.order_id,
       PaymentId: res.metadata.payment_id,
       Price: this.subscription_data.Price1months,
+      Inst_Id: this.loginData.inst_id,
       TimeDuration: parseInt(this.subscription_data.OneMonths.match(/\d+/)[0]),
       Status: "Failed",
       PayFailedReason: res.reason,
@@ -180,6 +187,7 @@ export class PremiumDescriptionComponent implements OnInit {
     console.log(`razorpay_signature${this.payData.razorpay_signature}`);
     console.log(`Price1months${this.subscription_data.Price1months}`);
     console.log(`OneMonths${this.subscription_data.OneMonths}`);
+    console.log(`Inst_Id${this.loginData.inst_id}`, 'sdsdsdds');
 
 
     const data = {
@@ -190,6 +198,7 @@ export class PremiumDescriptionComponent implements OnInit {
       PaymentId: this.payData.razorpay_payment_id,
       SignatureId: this.payData.razorpay_signature,
       Price: this.subscription_data.Price1months,
+      Inst_Id: this.loginData.inst_id,
       TimeDuration: parseInt(this.subscription_data.OneMonths.match(/\d+/)[0]),
 
       Status: "Success",

@@ -30,7 +30,7 @@ export class VideoslistComponent implements OnInit {
 
     this.login = localStorage.getItem('userData')
     this.login_data = JSON.parse(this.login)
-    this.SubscriptionStatus = this.login_data.SubscriptionStatus
+    this.SubscriptionStatus = this.login_data.SubscriptionStatus    
   }
 
   ngOnInit(): void {
@@ -64,9 +64,9 @@ export class VideoslistComponent implements OnInit {
   }
 
   getValidity(id: any) {
-    console.log(this.login_data);
     this._crud.getValidity(id, this.login_id.inst_id).subscribe(
       (res: any) => {
+        console.log(res, 'log in sdsdfsddfs');
         console.log(res.SubscriptionStatus);
         if (res.SubscriptionStatus == 1) {
           this.logDeviceInfo(id)

@@ -28,7 +28,7 @@ export class PaymentGetWayComponent implements OnInit {
       description: 'TBrain',
       currency: 'INR',
       amount: 150000,
-      name: 'Turning Brain',
+      name: 'EDU Affair',
       key: 'rzp_test_YGORtbwcCRzFxD',
       image: '../../../assets/turnaningBrain Logo.webp',
       prefill: {

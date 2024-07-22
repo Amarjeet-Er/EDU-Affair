@@ -16,6 +16,8 @@ export class PlanValidityComponent implements OnInit {
   start_date =  ''
   TimeDuration = 0
   userid = 0
+  loginId:any;
+  login_id:any;
   constructor(
     private _crud: CrudService,
     private _routing: Router
@@ -25,17 +27,14 @@ export class PlanValidityComponent implements OnInit {
     console.log(this.login_data);
     this.userid =  this.login_data.Id
 
+    this.loginId = localStorage.getItem('loginData')
+    this.login_id = JSON.parse(this.loginId)
   }
 
-
-
-
-
-
   ngOnInit() {
-    this._crud.get_validity(this.userid).subscribe(
+    this._crud.get_validity(this.userid, this.login_id.inst_id).subscribe(
       (res: any) => {
-        console.log(res);
+        console.log(res, 'user id plan');
         this.premium = res[0]
         this.Price = res[0].Price
         this.TimeDuration = res[0].TimeDuration

@@ -133,12 +133,16 @@ export class CrudService {
     return this.http.post(`${this.base_url}StudentSelectSubscription`, data)
   }
 
+  get_validity(user_id: any, inst_id: number) {
+    return this.http.post(`${this.base_url}Payment_Confirmation?UserId=${user_id}&Inst_Id=${inst_id}`, { headers: this.headers })
+  }
+
 
   ////////// yaha tak complate ho geya hai but forget password ko chhor kar ab niche ka karna hai /////////
- 
 
 
-  
+
+
   get_user() {
     return this.http.get(`${this.base_url}StudentApi`)
   }
@@ -155,8 +159,5 @@ export class CrudService {
     return this.http.get(`${this.base_url}AppVersion`)
   }
 
-  get_validity(user_id: any) {
-    return this.http.post(`${this.base_url}Payment_Confirmation?UserId=${user_id}`, { headers: this.headers })
-  }
 
 }

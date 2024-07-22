@@ -14,7 +14,7 @@ export class SharedService {
 
   base_url = new BehaviorSubject<string>('https://eduaffair.in/api/')
   img_url = new BehaviorSubject<string>('https://eduaffair.in')
-  pdf_open_url = new BehaviorSubject<string>(`https://turningbrain.in/api/AllNotes?filename=`)
+  pdf_open_url = new BehaviorSubject<string>(`https://eduaffair.in/api/AllNotes?filename=`)
   country_name = new BehaviorSubject('')
   send_otp_number = new BehaviorSubject(0)
   email = new BehaviorSubject<string>('')

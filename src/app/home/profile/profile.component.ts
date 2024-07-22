@@ -26,10 +26,7 @@ export class ProfileComponent implements OnInit {
 
   ) {
     this.login = localStorage.getItem('loginData')
-    this.login_data = JSON.parse(this.login)
-    console.log(this.login_data, 'allll');
-    console.log(this.login_data.id, 'iddddd');
-    
+    this.login_data = JSON.parse(this.login)    
     
     this.profile_data = this._router.getCurrentNavigation()?.extras
   }

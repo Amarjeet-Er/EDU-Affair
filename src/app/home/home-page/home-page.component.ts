@@ -61,6 +61,8 @@ export class HomePageComponent implements OnInit {
         // here code account block 
 
         if (res.LoginStatus == 1) {
+          console.log('res log', res.LoginStatus);
+          
           this._shared.tostDelay('Your account is blocked. Please contact the administrator.')
           this.logout()
         }
@@ -76,7 +78,7 @@ export class HomePageComponent implements OnInit {
 
 
   Plan() {
-    if (this.SubscriptionStatus == 0) {
+    if (this.SubscriptionStatus === 0) {
       this._routing.navigate(['/proLock'])
     } else {
       this._routing.navigate(['/PlanValidity'])

@@ -97,11 +97,11 @@ export class PremiumComponent implements OnInit {
       // key: 'rzp_test_YGORtbwcCRzFxD', //test
       key: 'rzp_live_nrumEje16i8mje', //live
       amount: amount,
-      description: 'Turning Brain',
+      description: 'EDU Affair',
       image: 'https://turningbrain.in/website/assets/images/logo.png',
       order_id: order_id,
       currency: 'INR',
-      name: 'Turning Brain',
+      name: 'EDU Affair',
       prefill: {
         name: this.user_data.Name,
         email: this.user_data.EmailId,
@@ -161,6 +161,7 @@ export class PremiumComponent implements OnInit {
       OrderId: res.metadata.order_id,
       PaymentId: res.metadata.payment_id,
       Price: this.subscription_data.Price1months,
+      Inst_Id: this.login_id.inst_id,
       TimeDuration: parseInt(this.subscription_data.OneMonths.match(/\d+/)[0]),
       Status: "Failed",
       PayFailedReason: res.reason,
@@ -172,7 +173,7 @@ export class PremiumComponent implements OnInit {
 
     this.razorpayService.PaymentFaildInsert(data).subscribe(
       (res: any) => {
-        console.log(res);
+        console.log(res, 'ssdsdds');
         this._shared.tostErrorTop(res)
 
       }
@@ -200,6 +201,7 @@ export class PremiumComponent implements OnInit {
       PaymentId: this.payData.razorpay_payment_id,
       SignatureId: this.payData.razorpay_signature,
       Price: this.subscription_data.Price1months,
+      Inst_Id: this.login_id.inst_id,
       TimeDuration: parseInt(this.subscription_data.OneMonths.match(/\d+/)[0]),
 
       Status: "Success",
@@ -208,8 +210,8 @@ export class PremiumComponent implements OnInit {
 
     this.razorpayService.PaymentSuccessInsert(data).subscribe(
       (res: any) => {
-        console.log(res);
-        // alert(res)
+        console.log(res,'asasas');
+        alert(res)
         this._shared.tostSuccessTop('Payment Success')
         this.logDeviceInfo()
       }
