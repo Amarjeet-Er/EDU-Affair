@@ -1,5 +1,5 @@
 #wrapper{
-    width: 300px;
+    width: 100%;
 }
 mat-toolbar{
     display: flex;

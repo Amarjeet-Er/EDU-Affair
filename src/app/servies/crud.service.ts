@@ -137,6 +137,9 @@ export class CrudService {
     return this.http.post(`${this.base_url}Payment_Confirmation?UserId=${user_id}&Inst_Id=${inst_id}`, { headers: this.headers })
   }
 
+  GetACallBack(data: any) {
+    return this.http.post(`${this.base_url}/RequestCallBack`, data)
+  }
 
   ////////// yaha tak complate ho geya hai but forget password ko chhor kar ab niche ka karna hai /////////
 
@@ -147,10 +150,6 @@ export class CrudService {
     return this.http.get(`${this.base_url}StudentApi`)
   }
 
-  GetACallBack(data: any) {
-    return this.http.post(`${this.base_url}/RequestCallBack`, data)
-  }
-
   DeviesIdUpdate(id: any, data: any) {
     return this.http.post(`${this.base_url}/UpdateDevice?Id=${id}`, data)
   }
@@ -158,6 +157,4 @@ export class CrudService {
   getAppNewUpdate() {
     return this.http.get(`${this.base_url}AppVersion`)
   }
-
-
 }

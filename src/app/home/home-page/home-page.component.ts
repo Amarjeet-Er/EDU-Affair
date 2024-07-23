@@ -78,7 +78,7 @@ export class HomePageComponent implements OnInit {
 
 
   Plan() {
-    if (this.SubscriptionStatus === 0) {
+    if (this.SubscriptionStatus == 0) {
       this._routing.navigate(['/proLock'])
     } else {
       this._routing.navigate(['/PlanValidity'])

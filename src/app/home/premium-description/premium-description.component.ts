@@ -48,11 +48,8 @@ export class PremiumDescriptionComponent implements OnInit {
   });
 
   ngOnInit(): void {
-
-
     this.data = localStorage.getItem('PayDesc')
     this.premium_data = JSON.parse(this.data)
-
     console.log(this.premium_data);
 
   }
@@ -66,9 +63,6 @@ export class PremiumDescriptionComponent implements OnInit {
     this.subscription_data = data
     const amount = data.Price1months
     this.createOrderL(amount)
-
-
-
   }
 
 
@@ -94,7 +88,7 @@ export class PremiumDescriptionComponent implements OnInit {
       // key: 'rzp_live_nrumEje16i8mje', //live
       amount: amount,
       description: 'EDU Affair',
-      // image: 'https://turningbrain.in/website/assets/images/logo.png',
+      image: '../../assets/Images/EDU affair app logo .png',
       order_id: order_id,
       currency: 'INR',
       name: 'EDU Affair',
@@ -104,7 +98,7 @@ export class PremiumDescriptionComponent implements OnInit {
         contact: this.user_data.MobileNo
       },
       theme: {
-        color: '#f49004'
+        color: '#0f4290'
       }
     }
 
@@ -117,14 +111,11 @@ export class PremiumDescriptionComponent implements OnInit {
     } catch (error) {
       console.log(error);
       this.PaymentFaildInsert(error)
-
     }
   }
 
 
   verifyPaymentLive(data: any) {
-    console.log(data);
-
     const order_id = data.razorpay_order_id;
     const payment_id = data.razorpay_payment_id;
     const razorpay_signature = data.razorpay_signature;
@@ -147,10 +138,11 @@ export class PremiumDescriptionComponent implements OnInit {
       );
   }
 
-
-
   PaymentFaildInsert(res: any) {
     const data = {
+      Name: this.user_data.Name,
+      MobileNo: this.user_data.MobileNo,
+      EmailId: this.user_data.EmailId,
       UserId: this.user_data.Id,
       CourseId: this.subscription_data.Course,
       SubjectId: this.subscription_data.Subject,
@@ -164,33 +156,19 @@ export class PremiumDescriptionComponent implements OnInit {
       PaymentMode: "through UPI",
     }
 
-
-    console.log(data);
-
     this.razorpayService.PaymentFaildInsert(data).subscribe(
       (res: any) => {
         console.log(res);
         this._shared.tostErrorTop(res)
-
       }
     )
   }
 
-
-
   PaymentSuccess() {
-    console.log(`this.user_data.Id${this.user_data.Id}`);
-    console.log(`Course${this.subscription_data.Course}`);
-    console.log(`Subject${this.subscription_data.Subject}`);
-    console.log(`razorpay_order_id${this.payData.razorpay_order_id}`);
-    console.log(`razorpay_payment_id${this.payData.razorpay_payment_id}`);
-    console.log(`razorpay_signature${this.payData.razorpay_signature}`);
-    console.log(`Price1months${this.subscription_data.Price1months}`);
-    console.log(`OneMonths${this.subscription_data.OneMonths}`);
-    console.log(`Inst_Id${this.loginData.inst_id}`, 'sdsdsdds');
-
-
     const data = {
+      Name: this.user_data.Name,
+      MobileNo: this.user_data.MobileNo,
+      EmailId: this.user_data.EmailId,
       UserId: this.user_data.Id,
       CourseId: this.subscription_data.Course,
       SubjectId: this.subscription_data.Subject,
@@ -200,34 +178,27 @@ export class PremiumDescriptionComponent implements OnInit {
       Price: this.subscription_data.Price1months,
       Inst_Id: this.loginData.inst_id,
       TimeDuration: parseInt(this.subscription_data.OneMonths.match(/\d+/)[0]),
-
       Status: "Success",
     }
 
     console.log(data)
     this.razorpayService.PaymentSuccessInsert(data).subscribe(
       (res: any) => {
-        console.log(res);
-        // alert(res)
         this._shared.tostSuccessTop('Payment Success')
         this.logDeviceInfo()
       }
     )
-
   }
-
 
   RequstCall() {
     const data = JSON.parse(this.login_data)
-    console.log(data);
-    console.log(data.Name);
-    console.log(data.MobileNo);
-    console.log(data.EmailId);
-
+    const instData = this.loginData.inst_id
     const fbData = new FormData()
     fbData.append('Name', data.Name)
     fbData.append('Email', data.EmailId)
     fbData.append('Mobile', data.MobileNo)
+    fbData.append('Inst_Id', instData);
+
     this.send_mail(fbData)
   }
   send_mail(data: any) {
@@ -241,9 +212,6 @@ export class PremiumDescriptionComponent implements OnInit {
     )
   }
 
-
-
-
   async logDeviceInfo() {
     try {
       const deviesId = await Device.getId();
@@ -255,10 +223,6 @@ export class PremiumDescriptionComponent implements OnInit {
   }
 
   updateDeviesId(deviid: string, model: string) {
-    console.log("deviesid", deviid);
-    console.log("model", model);
-    console.log("userid", this.user_data.Id);
-
     const formData = new FormData()
     formData.append('Deviceid', deviid)
     formData.append('ModelNo', model)
@@ -269,6 +233,4 @@ export class PremiumDescriptionComponent implements OnInit {
       }
     )
   }
-
-
 }

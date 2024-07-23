@@ -11,19 +11,28 @@ export class ContactusComponent {
 
   login: any
   login_data: any
+  loginId: any
+  login_Id: any
   constructor(
     private _crud: CrudService,
     private _shared: SharedService
   ) {
     this.login = localStorage.getItem('userData')
     this.login_data = JSON.parse(this.login)
+
+    this.loginId = localStorage.getItem('loginData')
+    this.login_Id = JSON.parse(this.loginId)
+    
   }
   RequstCall() {
     const data = this.login_data
+    const instData = this.login_Id.inst_id;
+
     const fbData = new FormData()
     fbData.append('Name', data.Name)
     fbData.append('Email', data.EmailId)
     fbData.append('Mobile', data.MobileNo)
+    fbData.append('Inst_Id', instData);
     this.send_mail(fbData)
   }
   

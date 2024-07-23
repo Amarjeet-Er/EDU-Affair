@@ -72,7 +72,6 @@ export class McqUnitComponent implements OnInit {
         if (res.SubscriptionStatus == 1) {
           this.logDeviceInfos(unitid)
 
-
         } else {
           this._router.navigate(['/proLock3'])
         }
@@ -100,6 +99,10 @@ export class McqUnitComponent implements OnInit {
     try {
       const deviesId = await Device.getId();
       const info = await Device.getInfo();
+      console.log(deviesId.identifier);
+      console.log(this.login.DeviceId);
+      
+      
       // this.updateDeviesId(deviesId.identifier, info.model)
       if (deviesId.identifier == this.login.DeviceId) {
         this._shared.mcqType.next('mix')

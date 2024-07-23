@@ -94,11 +94,11 @@ export class PremiumComponent implements OnInit {
 
   async payWithLive(order_id: string, amount: string) {
     const options = {
-      // key: 'rzp_test_YGORtbwcCRzFxD', //test
-      key: 'rzp_live_nrumEje16i8mje', //live
+      key: 'rzp_test_YGORtbwcCRzFxD', //test
+      // key: 'rzp_live_nrumEje16i8mje', //live
       amount: amount,
       description: 'EDU Affair',
-      image: 'https://turningbrain.in/website/assets/images/logo.png',
+      image: '../../assets/Images/EDU affair app logo .png',
       order_id: order_id,
       currency: 'INR',
       name: 'EDU Affair',
@@ -222,15 +222,13 @@ export class PremiumComponent implements OnInit {
 
   RequstCall() {
     const data = JSON.parse(this.login_data)
-    console.log(data);
-    console.log(data.Name);
-    console.log(data.MobileNo);
-    console.log(data.EmailId);
-
+    const instData= this.login_id.inst_id
     const fbData = new FormData()
     fbData.append('Name', data.Name)
     fbData.append('Email', data.EmailId)
     fbData.append('Mobile', data.MobileNo)
+    fbData.append('Inst_Id', instData);
+
     this.send_mail(fbData)
   }
   send_mail(data: any) {

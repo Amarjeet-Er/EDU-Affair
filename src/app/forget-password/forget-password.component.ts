@@ -18,6 +18,7 @@ export class ForgetPasswordComponent implements OnInit {
   CPwd: boolean = false
   login: any;
   login_data: any;
+  InstId: any;
 
   constructor(
     private _crud: CrudService,
@@ -82,12 +83,15 @@ export class ForgetPasswordComponent implements OnInit {
     fromdata.append('OTP', otp)
     this._crud.veryfy_otpFrogetPassword(this.email, fromdata).subscribe(
       (res: any) => {
-        console.log(res);
+        console.log(res, 'status');
+        this.InstId = res.Inst_Id;
         if (res.Status == "Matched OTP") {
           this.send_otp = false
           this.verify_otp = false
           this.passwordChange = true
           this._shared.tostSuccessBottom('OTP Match Successfully ')
+          console.log(res.Status, 'status');
+
         }
       }, (error) => {
         console.log(error);
@@ -96,7 +100,6 @@ export class ForgetPasswordComponent implements OnInit {
       }
     )
   }
-
   chnagePassword(password: string) {
     if (!this.passwordForm.valid) {
       this._shared.tostErrorTop('Plz..  Fill all the filds')
@@ -105,7 +108,7 @@ export class ForgetPasswordComponent implements OnInit {
         this._shared.tostErrorTop('Password not match')
         return
       }
-      this._crud.change_password(this.email, password, this.login_data.inst_id).subscribe(
+      this._crud.change_password(this.email, password, this.InstId).subscribe(
         (res: any) => {
           console.log(res);
           if (res == 'Password Updated Successfully') {
