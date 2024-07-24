@@ -43,8 +43,11 @@ export class VideoslistComponent implements OnInit {
   get_videoList(id: number) {
     this._crud.get_videos(this.login_id.inst_id, id).subscribe(
       (res: any) => {
-        this.video_data = res
-        this.subject = res[0]?.Unit
+        console.log(res);
+        if (res && res) {
+          this.video_data = res.filter((video: any) => video.VideoType === "Paid");
+          this.subject = this.video_data[0].Unit;
+        }
       },
       (err: any) => {
         console.log(err);

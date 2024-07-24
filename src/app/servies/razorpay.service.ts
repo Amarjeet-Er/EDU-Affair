@@ -17,8 +17,6 @@ export class RazorpayService {
 
   createOrderLive(amount: string): Observable<any> {
     return this.http.get<any>(`${this.baseUrlLive}Payment?totalAmount=${amount}`, {});
-
-
   }
 
   verifyOrderLive(order_id: string, payment_id: string, razorpay_signature: string) {
@@ -37,17 +35,11 @@ export class RazorpayService {
     });
   }
 
-
   PaymentSuccessInsert(data: any) {
-    console.log(data);
     return this.http.post(`https://eduaffair.in/api/Payment`, data)
   }
-
 
   PaymentFaildInsert(data: any) {
-    console.log(data);
     return this.http.post(`https://eduaffair.in/api/Payment`, data)
   }
-
-
 } 

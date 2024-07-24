@@ -10,8 +10,6 @@ import { LocalNotifications , ActionPerformed} from '@capacitor/local-notificati
 import { CrudService } from './servies/crud.service';
 import { PrivacyScreen } from '@capacitor-community/privacy-screen';
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -35,7 +33,6 @@ export class AppComponent implements OnInit , AfterViewInit {
   ) {
    
   }
- 
 
   ngOnInit() {
     this._backbtn.back(this.location.path())
@@ -48,7 +45,7 @@ export class AppComponent implements OnInit , AfterViewInit {
     PrivacyScreen.enable().then(() => {
       console.log('Privacy enable');
     }).catch(error => {
-      console.error('Error disabling privacy:', error);
+      console.log('Error disabling privacy:', error);
     });
   }
   isLogin() {
@@ -62,33 +59,22 @@ export class AppComponent implements OnInit , AfterViewInit {
 
       }
     }
-
-
-
   }
-
-
-
-
-
 
   // for update code here  
 
   async initializeApp() {
-    this._crud.getAppNewUpdate().subscribe(
-      (res: any) => {
-        console.log(res);
-        console.log(res[0].Current_Version);
-        this.updateURL =  res[0].Url
-        if (this.AppCurrentVersion != res[0].Current_Version) {
-          this.pushNotification()
-        }
-      }
-    )
+    // this._crud.getAppNewUpdate().subscribe(
+    //   (res: any) => {
+    //     console.log(res,'app version');
+    //     console.log(res[0].Current_Version);
+    //     this.updateURL =  res[0].Url
+    //     if (this.AppCurrentVersion != res[0].Current_Version) {
+    //       this.pushNotification()
+    //     }
+    //   }
+    // )
   }
-
-
-
 
   pushNotification() {
     LocalNotifications.schedule({
@@ -104,7 +90,6 @@ export class AppComponent implements OnInit , AfterViewInit {
       ]
     });
   }
-
 
    addNotificationActionListener = async () => {
     return LocalNotifications.addListener('localNotificationActionPerformed', (notificationAction: ActionPerformed) => {

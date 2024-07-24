@@ -43,7 +43,6 @@ export class DashboardComponent implements OnInit {
 
     this._crud.get_banner(this.login_data.inst_id).subscribe(
       (res: any) => {
-        console.log(res, 'banare');
         this.slider_data = res
       }
     )
@@ -55,7 +54,7 @@ export class DashboardComponent implements OnInit {
         this.get_maix_MCQ(res)
         this._crud.get_subject(coursedata, this.login_data.inst_id).subscribe(
           (res: any) => {
-            this.subject_data = res[0].SubjectName
+            this.subject_data = res[0]?.SubjectName
           }
         )
       }
@@ -66,9 +65,8 @@ export class DashboardComponent implements OnInit {
   get_free_video() {
     this._crud.get_free_Video(this.login_data.inst_id).subscribe(
       (res: any) => {
-        console.log(res, 'free');
-
-        this.free_video_data = res
+        this.free_video_data = res.filter((free_video: any) => free_video.VideoType === "Unpaid");
+        console.log(this.free_video_data, 'free');
       }
     )
   }
@@ -109,7 +107,8 @@ export class DashboardComponent implements OnInit {
 
     this._crud.get_Suggestionvideo(data).subscribe(
       (res: any) => {
-        this.Suggestionvideo = res
+        this.Suggestionvideo = res.filter((video: any) => video.VideoType === "Paid");
+        console.log(this.Suggestionvideo, 'video');
       }
     )
   }
@@ -123,7 +122,6 @@ export class DashboardComponent implements OnInit {
       (res: any) => {
         if (res.SubscriptionStatus == 1) {
           this.logDeviceInfos(id, data)
-
         } else {
           this._routing.navigate(['/proLock'])
           this._shared.videoyatest.next('Video')
@@ -141,12 +139,10 @@ export class DashboardComponent implements OnInit {
       (res: any) => {
         if (res.SubscriptionStatus == 1) {
           this.logDeviceInfo(id)
-
         } else {
           this._routing.navigate(['/proLock'])
           this._shared.videoyatest.next('MCQ Test')
         }
-
       }
     )
   }
@@ -173,7 +169,6 @@ export class DashboardComponent implements OnInit {
       // this.updateDeviesId(deviesId.identifier, info.model)
       if (deviesId.identifier == this.user_data.DeviceId) {
         this._routing.navigate(['/suggestvideo'], data)
-
       } else {
         this._shared.tostErrorTop(`You can watch paid videos only on registered devices. Please check your device's ID in your profile and contact us.`)
       }
@@ -184,11 +179,9 @@ export class DashboardComponent implements OnInit {
   get_maix_MCQ(id: any) {
     this._crud.get_suggess_mcq(this.login_data.inst_id, id).subscribe(
       (res: any) => {
-        this.suggestMCQ_sub = res[0].Subject
-        this.suggestMCQ_title = res[0].MCQTitle
+        this.suggestMCQ_sub = res[0]?.Subject
+        this.suggestMCQ_title = res[0]?.MCQTitle
       }
     )
   }
-
-
 }

@@ -24,28 +24,22 @@ export class SubjectComponent implements OnInit {
   ngOnInit(): void {
     this._shared.course_id.subscribe(
       (res: any) => {
-        console.log(res);
         this.get_subject(res)
       }
     )
-
-
   }
 
   get_subject(id: number) {
     this._crud.get_subject(id, this.login_data.inst_id).subscribe(
       (res: any) => {
-        console.log(res);
          this.subject_data =  res
       }
     )
   }
-
 
   OnUnit(id:number){
     this._shared.subject_id.next(id)
     localStorage.setItem('subjectid', JSON.stringify(id) )
     this._router.navigate(['/home/subject/unit'])
   }
-
 }

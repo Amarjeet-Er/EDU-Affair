@@ -58,8 +58,6 @@ export class SuggestVideoComponent implements OnInit {
     this.play_video(this.fist_data.VideoUrl)
     this.video_title = this.fist_data.VideoTitle
     this.video_desc = this.fist_data.VideoDescription
-
-
   }
 
 
@@ -68,49 +66,32 @@ export class SuggestVideoComponent implements OnInit {
     const data = {
       Course: course,
       Inst_Id: instId,
+      
     }
+    console.log(instId,'inst is');
     this._crud.get_Suggestionvideo(data).subscribe(
       (res: any) => {
-        console.log(res);
-        this.video_data = res
+        // this.video_data=res
+        this.video_data = res.filter((video: any) => video.VideoType === "Paid");
+        console.log(this.video_data, 'video');
       }
     )
   }
 
 
   onPlay(data: any) {
+    console.log(data, 'data');
+    
     this.video_title = data.VideoTitle
     this.video_desc = data.VideoDescription
     const url = data.VideoUrl
-    console.log(url);
+    console.log(url, 'url');
     this.unSafeurl = url
     this.play_video(url)
   }
 
   play_video(url: any) {
-    console.log(url);
+    console.log(url,'url play');
     this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
-
-
-
-  getValidity(id: any) {
-    console.log(this.login_data);
-    this._crud.getValidity(id, this.login_data.inst_id).subscribe(
-      (res: any) => {
-        console.log(res);
-        if (res.SubscriptionStatus == 1) {
-          this._shared.mcqType.next('suggess')
-          this._routing.navigate(['/mcqList'])
-        } else {
-          this._routing.navigate(['/proLock'])
-        }
-
-      }
-    )
-  }
-
- 
-
-
 }

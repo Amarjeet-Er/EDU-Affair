@@ -106,8 +106,8 @@ export class CrudService {
   }
 
   // ****** Suggestion video ****** //
-  get_Suggestionvideo(data: any) {
-    return this.http.post(`${this.base_url}/SuggestedVideo`, data)
+  get_Suggestionvideo(data: any) {    
+    return this.http.post(`${this.base_url}SuggestedVideo`, data)
   }
 
   // ****** forget password or change password****** //
@@ -145,7 +145,6 @@ export class CrudService {
 
 
 
-
   get_user() {
     return this.http.get(`${this.base_url}StudentApi`)
   }
@@ -154,7 +153,7 @@ export class CrudService {
     return this.http.post(`${this.base_url}/UpdateDevice?Id=${id}`, data)
   }
 
-  getAppNewUpdate() {
-    return this.http.get(`${this.base_url}AppVersion`)
-  }
+  // getAppNewUpdate() {
+  //   return this.http.get(`${this.base_url}AppVersion`)
+  // }
 }

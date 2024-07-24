@@ -17,6 +17,7 @@ export class UnitComponent implements OnInit {
   login: any;
   login_data: any;
   inst_id: any;
+  
   constructor(
     private _crud: CrudService,
     private _shared: SharedService,
@@ -38,27 +39,21 @@ export class UnitComponent implements OnInit {
     this.gte_unit(this.course_id, this.subject_id, this.inst_id)
   }
 
-
   gte_unit(course_id: number, subject_id: number, inst_id: number) {
-
     const data = {
       "Course": course_id,
       "Subject": subject_id,
       "Inst_Id": inst_id,
     }
-    console.log(data);
     
     this._crud.get_unit(data).subscribe(
       (res: any) => {
-        console.log(res, 'unit');
         this.unit_data = res
       }
     )
   }
 
-
   OnVideos(id: any) {
-    console.log(id);
     localStorage.setItem('unitid', JSON.stringify(id))
     this._router.navigate(['/home/subject/unit/videos'])
   }

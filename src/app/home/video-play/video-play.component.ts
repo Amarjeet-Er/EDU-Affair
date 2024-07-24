@@ -24,7 +24,7 @@ export class VideoPlayComponent implements OnInit {
   SubscriptionStatus: any
   loginId: any;
   login_id: any
-  
+
   constructor(
     private sanitizer: DomSanitizer,
     private _shared: SharedService,
@@ -50,12 +50,13 @@ export class VideoPlayComponent implements OnInit {
   get_videoList(id: number) {
     this._crud.get_videos(this.login_id.inst_id, id).subscribe(
       (res: any) => {
-        console.log(res);
-        this.video_data = res
-        this.play_video(res[0].VideoUrl)
-        this.video_title = res[0].VideoTitle
-        this.video_desc = res[0].VideoDescription
-        this.unit = res[0].Unit
+        if (res && res) {
+          this.video_data = res.filter((video: any) => video.VideoType === "Paid");
+          this.play_video(res[0].VideoUrl)
+          this.video_title = res[0].VideoTitle
+          this.video_desc = res[0].VideoDescription
+          this.unit = res[0].Unit
+        }
       }
     )
   }
@@ -65,18 +66,14 @@ export class VideoPlayComponent implements OnInit {
   }
 
   play_video(url: any) {
-    console.log(url);
     this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url)
   }
-
 
   getValidity(id: any, data: any) {
     this._crud.getValidity(id, this.login_id.inst_id).subscribe(
       (res: any) => {
-        console.log(res.SubscriptionStatus);
         if (res.SubscriptionStatus == 1) {
           this.logDeviceInfo(id, data)
-
         } else {
           this._router.navigate(['/proLock2'])
         }
@@ -104,5 +101,3 @@ export class VideoPlayComponent implements OnInit {
     }
   }
 }
-
-

@@ -93,3 +93,8 @@
     opacity: 0 !important;
 
 }
+.no_message{
+    position: relative;
+    top: 35px;
+    left: 31px;
+}

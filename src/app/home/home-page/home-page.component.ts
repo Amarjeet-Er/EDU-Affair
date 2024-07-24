@@ -26,17 +26,16 @@ export class HomePageComponent implements OnInit {
   ) {
     this.login = localStorage.getItem('loginData')
     this.login_data = JSON.parse(this.login)
-    console.log(this.login_data.id);
     var logStatus = 0
     logStatus = this.login_data.id
-    if(logStatus > 0){
-    }else{
+
+    if (logStatus > 0) {
+    } else {
       this._routing.navigate(['/'])
     }
     this._shared.img_url.subscribe(
       (res: any) => {
         this.img_url = res
-
       }
     )
   }
@@ -45,10 +44,8 @@ export class HomePageComponent implements OnInit {
   ImgUrl: string = ''
   LeadSubMenu() { }
 
-
-
   ngOnInit() {
-    this._crud.get_profile(this.login_data.id, this.login_data.inst_id).subscribe(
+    this._crud.get_profile(this.login_data?.id, this.login_data?.inst_id).subscribe(
       (res: any) => {
         this.user_data = res
         localStorage.setItem('userData', JSON.stringify(res))
@@ -61,8 +58,6 @@ export class HomePageComponent implements OnInit {
         // here code account block 
 
         if (res.LoginStatus == 1) {
-          console.log('res log', res.LoginStatus);
-          
           this._shared.tostDelay('Your account is blocked. Please contact the administrator.')
           this.logout()
         }
@@ -70,12 +65,9 @@ export class HomePageComponent implements OnInit {
     )
   }
 
-
-
   onProfile() {
     this._routing.navigate(['/profile'], this.user_data)
   }
-
 
   Plan() {
     if (this.SubscriptionStatus == 0) {
@@ -85,9 +77,6 @@ export class HomePageComponent implements OnInit {
 
     }
   }
-
-
-
 
   logout() {
     this._routing.navigate(['/'])

@@ -35,6 +35,7 @@ export class SignupWithEmailComponent {
       College: ['', Validators.required],
       CountryName: ['', Validators.required],
       MobileNo: ['', Validators.required],
+      Inst_id: ['', Validators.required],
       profile: [],
       Password: [
         '', [
@@ -47,14 +48,12 @@ export class SignupWithEmailComponent {
           Validators.pattern(/[!@#$]/),
         ]
       ],
-
     })
 
     this._shared.email.subscribe(
       (res: any) => {
         console.log(res);
         this.regForm.controls['Emailid'].setValue(res)
-
       }
     )
 
@@ -89,6 +88,8 @@ export class SignupWithEmailComponent {
     )
   }
   get_inst_id_by_course(inst_id: string) {
+    console.log(inst_id, 'id');
+    
     this._crud.get_select_course(inst_id).subscribe(
       (res: any) => {
         this.courses = res;
