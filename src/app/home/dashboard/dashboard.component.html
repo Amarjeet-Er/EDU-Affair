@@ -2,6 +2,10 @@
 
   <div id="banner">
     <div id="slider">
+      <span *ngIf="!slider_data?.length">
+        <img src="../../../assets/Images/slider.png" alt="" width="100%" height="215px">
+      </span>
+
       <swiper [spaceBetween]="30" [centeredSlides]="true" [autoplay]="{
               delay: 5000,
               disableOnInteraction: false
@@ -42,7 +46,8 @@
             </div>
           </div>
           <div class="imgarea">
-            <img src="../../../assets/icon/video-slide.png" alt="">
+            <img [src]="free_video?.ImageUrl ? img_url+free_video?.ImageUrl :'../../../assets/Images/thumanal.png'"
+              alt="">
           </div>
         </div>
       </ng-template>
@@ -54,7 +59,7 @@
   </div>
   <div id="videos">
     <span class="no_message" *ngIf="!Suggestionvideo?.length">No Suggested Video</span>
-    
+
     <swiper [spaceBetween]="30" [centeredSlides]="true" [autoplay]="{
       delay: 6000,
       disableOnInteraction: false
@@ -73,7 +78,7 @@
             </div>
           </div>
           <div class="imgarea">
-            <img src="../../../assets/icon/video-slide.png" alt="">
+            <img [src]="Suggest?.ImageUrl ? img_url+Suggest?.ImageUrl :'../../../assets/Images/thumanal.png'" alt="">
           </div>
         </div>
       </ng-template>
@@ -85,7 +90,8 @@
   <div class="titileCard">
     <b>Suggested MCQ Test</b>
   </div>
-  <div id="videos" (click)="onMCQ()">
+  <span class="no_MCQ" *ngIf="!suggestedTest?.length">No Suggested MCQ Test</span>
+  <div id="videos" (click)="onMCQ(suggestedTest)">
     <div class="contentarea">
       <div lass="subjectTitile">{{suggestMCQ_sub}}</div>
       <div class="videotitile">

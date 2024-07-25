@@ -18,6 +18,7 @@ export class FreeVideoComponent implements OnInit {
   fist_data: any
   login: any;
   login_data: any;
+  img_url: any;
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -33,6 +34,13 @@ export class FreeVideoComponent implements OnInit {
 
   ngOnInit() {
     this.get_videoList()
+
+    this._shared.img_url.subscribe(
+      (res: any) => {
+        console.log(res);
+        this.img_url = res
+      }
+    )
   }
 
   ngAfterViewInit() {

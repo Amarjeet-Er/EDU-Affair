@@ -1,15 +1,19 @@
-
 #wrapper {
     width: 100%;
     height: 100vh;
     background-color: #fff;
+    overflow: hidden;
 }
-
 
 #videoarea {
     width: 100%;
-    height: 280px;
+    height: 300px;
     z-index: 0;
+}
+
+#videoarea>iframe {
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -34,26 +38,45 @@
 }
 
 #videolistbox {
-    width: 100%;
-    height: calc(100vh - 380px);
+    height: calc(100vh - 420px);
     overflow-x: auto;
+    padding: 15px;
 }
 
+
+.cardlist {
+    width: 100%;
+    height: auto;
+    background-color: #f7f6f4;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.videoarea {
+    width: 100%;
+    height: 220px;
+}
+
+.videoarea>img {
+    border-radius: 12px 12px 0px 0px;
+}
 
 .content {
-    width: calc(70% - 20px);
-    height: calc(100% - 20px);
-    float: right;
+    width: calc(100% - 20px);
     padding: 10px;
+    height: auto;
 }
 
-.card_img {
-    width: calc(30% - 10px);
-    height: calc(100% - 10px);
-    padding: 5px;
-    float: left;
+.content p {
+    color: #000;
+    font-weight: bold;
+    display: inline-block;
+    max-width: 30ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
-
 
 .titile {
     width: 100%;
@@ -61,40 +84,17 @@
 }
 
 .star {
-    width: 100%;
-    height: 25px;
-    padding: 2px;
+    /* width: 100%; */
+    height: 10px;
+    /* padding: 2px; */
+    position: relative;
+    bottom: 15px;
 }
 
 .star img {
     position: relative;
     top: 3px;
 }
-
-
-.cardlist {
-    width: 90%;
-    height: 100px;
-    background-color: #f7f6f4;
-    margin: 20px auto;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 10px;
-}
-
-
-
-.content {
-    width: calc(70% - 20px);
-    height: calc(100% - 20px);
-    float: right;
-    padding: 10px;
-}
-
-.content p {
-    color: #000;
-    font-weight: bold;
-}
-
 
 b {
     float: right;
@@ -142,6 +142,7 @@ b mat-icon {
         top: 0;
         background-color: transparent;
     }
+
     .hidefullscrreen {
         width: 120px;
         height: 40px;
@@ -166,12 +167,6 @@ b mat-icon {
         width: 100%;
         height: auto;
         background-color: #ffffff;
-    }
-
-    #videoarea {
-        width: 100%;
-        height: 100vh;
-        z-index: 0;
     }
 
 

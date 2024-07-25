@@ -20,6 +20,10 @@ export class VideoslistComponent implements OnInit {
   inst_id: any;
   login_id: any
   loginId: any
+  onSearchHead = true
+  onSearch = false
+  filter_data: any;
+  img_url: any;
   constructor(
     private _shared: SharedService,
     private _crud: CrudService,
@@ -30,15 +34,30 @@ export class VideoslistComponent implements OnInit {
 
     this.login = localStorage.getItem('userData')
     this.login_data = JSON.parse(this.login)
-    this.SubscriptionStatus = this.login_data.SubscriptionStatus    
+    this.SubscriptionStatus = this.login_data.SubscriptionStatus
   }
 
   ngOnInit(): void {
     this.unit = localStorage.getItem('unitid')
     this.unit_id = JSON.parse(this.unit)
     this.get_videoList(this.unit_id)
+
+    this._shared.img_url.subscribe(
+      (res: any) => {
+        console.log(res);
+        this.img_url = res
+      }
+    )
   }
 
+  SearchOpen() {
+    this.onSearch = true
+    this.onSearchHead = false
+  }
+  SearchClose() {
+    this.onSearch = false
+    this.onSearchHead = true
+  }
 
   get_videoList(id: number) {
     this._crud.get_videos(this.login_id.inst_id, id).subscribe(
@@ -46,6 +65,7 @@ export class VideoslistComponent implements OnInit {
         console.log(res);
         if (res && res) {
           this.video_data = res.filter((video: any) => video.VideoType === "Paid");
+          this.filter_data = res.filter((video: any) => video.VideoType === "Paid");
           this.subject = this.video_data[0].Unit;
         }
       },
@@ -96,7 +116,18 @@ export class VideoslistComponent implements OnInit {
       console.error('Unable to get device information:', error);
     }
   }
-
+  onSearchVideo(filter: string) {
+    this.video_data = this.filter_data.filter((data: any) => {
+      if (data?.VideoTitle.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
+        return true;
+      }
+      if (data?.Duration.toString().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
+        return true;
+      }
+      return false;
+    }
+    );
+  }
 }
 
 

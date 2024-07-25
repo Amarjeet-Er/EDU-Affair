@@ -24,6 +24,7 @@ export class VideoPlayComponent implements OnInit {
   SubscriptionStatus: any
   loginId: any;
   login_id: any
+  img_url: any;
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -41,6 +42,14 @@ export class VideoPlayComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this._shared.img_url.subscribe(
+      (res: any) => {
+        console.log(res);
+        this.img_url = res
+      }
+    )
+    
     this.unit_data = localStorage.getItem('unitid')
     console.log("unitloca" + JSON.parse(this.unit_data));
     this.unit_id = JSON.parse(this.unit_data)

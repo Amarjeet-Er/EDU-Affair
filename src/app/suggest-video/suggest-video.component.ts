@@ -24,6 +24,7 @@ export class SuggestVideoComponent implements OnInit {
   user_data: any
   loginId: any;
   login_id: any;
+  img_url: any;
   constructor(
     private sanitizer: DomSanitizer,
     private _shared: SharedService,
@@ -38,6 +39,13 @@ export class SuggestVideoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._shared.img_url.subscribe(
+      (res: any) => {
+        console.log(res);
+        this.img_url = res
+      }
+    )
+    
     this._shared.course_id.subscribe(
       (res: any) => {
         console.log(res);

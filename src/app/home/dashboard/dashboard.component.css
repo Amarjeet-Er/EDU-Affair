@@ -8,10 +8,12 @@
     width: 100%;
     height: 220px;
     border-radius: 10px;
+    line-height: 220px;
+    text-align: center;
 }
 
 .slider_img {
-    height: 200px;
+    height: 215px;
     border-radius: 10px;
 }
 
@@ -39,9 +41,12 @@
     height: 90px;
     float: left;
 }
-.imgarea img{
-    width: 100%;
-    height: 100%;
+
+.imgarea img {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    padding: 5px 5px 5px 5px;
+    border-radius: 12px 0px 0px 12px;
 }
 
 .contentarea {
@@ -51,12 +56,12 @@
     padding: 5px 5px;
 }
 
-.subjectTitile{
+.subjectTitile {
     color: #183867;
     font-weight: bold;
 }
 
-.videotitile{
+.videotitile {
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -64,7 +69,8 @@
 
 .star {
     width: 100%;
-    height: 25px;
+    position: relative;
+    bottom: 3px;
 }
 
 .star img {
@@ -73,11 +79,6 @@
     width: 20px;
     height: 20px;
 }
-
-
-
-
-
 
 .titileCard b {
     line-height: 40px;
@@ -93,8 +94,14 @@
     opacity: 0 !important;
 
 }
-.no_message{
+
+.no_message {
     position: relative;
     top: 35px;
     left: 31px;
+}
+.no_MCQ {
+    position: relative;
+    top: 35px;
+    left: 100px;
 }

@@ -26,6 +26,8 @@ export class DashboardComponent implements OnInit {
   login_data: any
   user: any
   user_data: any
+  suggestedTest: any;
+  img_url: any;
 
   constructor(
     private _crud: CrudService,
@@ -40,6 +42,13 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this._shared.img_url.subscribe(
+      (res: any) => {
+        console.log(res);
+        this.img_url = res
+      }
+    )
 
     this._crud.get_banner(this.login_data.inst_id).subscribe(
       (res: any) => {
@@ -130,8 +139,14 @@ export class DashboardComponent implements OnInit {
     )
   }
 
-  onMCQ() {
-    this.getValidity(this.login_data.id)
+  onMCQ(suggestedTest: any) {
+    if (suggestedTest == 0) {
+      console.log(suggestedTest, 'test');
+      return
+    }
+    else {
+      this.getValidity(this.login_data.id)
+    }
   }
 
   getValidity(id: any) {
@@ -179,6 +194,7 @@ export class DashboardComponent implements OnInit {
   get_maix_MCQ(id: any) {
     this._crud.get_suggess_mcq(this.login_data.inst_id, id).subscribe(
       (res: any) => {
+        this.suggestedTest = res
         this.suggestMCQ_sub = res[0]?.Subject
         this.suggestMCQ_title = res[0]?.MCQTitle
       }

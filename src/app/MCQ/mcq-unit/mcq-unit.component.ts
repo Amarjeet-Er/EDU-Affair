@@ -18,6 +18,7 @@ export class McqUnitComponent implements OnInit {
   login: any
   loginId: any;
   login_data: any;
+  inst_id: any;
   constructor(
     private _crud: CrudService,
     private _shared: SharedService,
@@ -27,6 +28,7 @@ export class McqUnitComponent implements OnInit {
   ngOnInit(): void {
     this.loginId = localStorage.getItem('loginData')
     this.login_data = JSON.parse(this.loginId)
+    this.inst_id = this.login_data.inst_id
 
     this.user_data = localStorage.getItem('userData')
     this.login = JSON.parse(this.user_data)
@@ -36,20 +38,20 @@ export class McqUnitComponent implements OnInit {
     this.subject = localStorage.getItem('subjectid')
     this.subject_id = JSON.parse(this.subject)
 
-    this.gte_unit(this.course_id, this.subject_id)
+    this.gte_unit(this.course_id, this.subject_id, this.inst_id)
   }
 
 
-  gte_unit(course_id: number, subject_id: number) {
+  gte_unit(course_id: number, subject_id: number, inst_id: number) {
 
     const data = {
       "Course": course_id,
-      "Subject": subject_id
+      "Subject": subject_id,
+      "Inst_Id": inst_id,
     }
 
     this._crud.get_unit(data).subscribe(
       (res: any) => {
-        console.log(res);
         this.unit_data = res
       }
     )
