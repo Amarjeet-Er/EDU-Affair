@@ -98,7 +98,7 @@ export class PremiumComponent implements OnInit {
       // key: 'rzp_live_nrumEje16i8mje', //live
       amount: amount,
       description: 'EDU Affair',
-      image: '../../assets/Images/EDU affair app logo .png',
+      // image: '../../assets/Images/EDU affair app logo .png',
       order_id: order_id,
       currency: 'INR',
       name: 'EDU Affair',

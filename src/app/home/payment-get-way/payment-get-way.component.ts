@@ -30,7 +30,7 @@ export class PaymentGetWayComponent implements OnInit {
       amount: 150000,
       name: 'EDU Affair',
       key: 'rzp_test_YGORtbwcCRzFxD',
-      image: '../../../assets/turnaningBrain Logo.webp',
+      image: '../../../assets/eduaffair.png',
       prefill: {
         name: 'AKhilesh Kumar',
         email: 'akhilesh@gmail.com',

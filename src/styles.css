@@ -42,3 +42,13 @@ body {
   }
 }
 
+.termsColor h2 {
+  color: #0f4290;
+  font-size: 24px;
+}
+
+.termsColor h4 {
+  color: #0f4290;
+  font-size: 18px;
+  font-weight: 500;
+}

@@ -6,10 +6,9 @@
 }
 
 .titileCard {
-    width: 90%;
-    height: 40px;
-    margin: 20px auto 0px;
-    padding: 10px 0px;
+    width: 95%;
+    margin: 10px auto 0px;
+    padding: 5px 0px;
     border-left: 10px solid green;
     border-radius: 10px;
     display: flex;
@@ -17,6 +16,9 @@
     align-items: center;
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    position: sticky;
+    top: 0px;
+    z-index: 10;
 }
 
 .titileCard>input {
@@ -33,16 +35,16 @@
 }
 
 #boxvideos {
-    padding: 15px;
+    padding: 10px 0px 0px;
 }
 
 .cardlist {
     width: 100%;
     height: auto;
-    background-color: #f7f6f4;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    /* background-color: #ffffff; */
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .videoarea {
@@ -50,24 +52,16 @@
     height: 220px;
 }
 
-.videoarea>img {
-    border-radius: 12px 12px 0px 0px;
-}
-
 .content {
     width: calc(100% - 20px);
     padding: 10px;
     height: auto;
+    background-color: #ffffff;
 }
 
 .content p {
     color: #000;
     font-weight: bold;
-    display: inline-block;
-    max-width: 30ch;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .titile {

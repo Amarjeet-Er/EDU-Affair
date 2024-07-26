@@ -18,10 +18,10 @@ mat-toolbar {
 }
 
 #content {
-    width: 90%;
+    width: 95%;
     height: calc(100vh - 90px);
     overflow-x: auto;
-    margin: 30px auto;
+    margin: 10px auto;
     text-align: justify;
     font-size: 15px;
     line-height: 25px;

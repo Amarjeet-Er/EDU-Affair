@@ -106,7 +106,7 @@ export class CrudService {
   }
 
   // ****** Suggestion video ****** //
-  get_Suggestionvideo(data: any) {    
+  get_Suggestionvideo(data: any) {
     return this.http.post(`${this.base_url}SuggestedVideo`, data)
   }
 
@@ -141,7 +141,12 @@ export class CrudService {
     return this.http.post(`${this.base_url}/RequestCallBack`, data)
   }
 
+  get_terms_condition(inst_id: number) {
+    return this.http.get(`${this.base_url}TermsCondition?Inst_Id=${inst_id}`)
+  }
+
   ////////// yaha tak complate ho geya hai but forget password ko chhor kar ab niche ka karna hai /////////
+
 
 
 

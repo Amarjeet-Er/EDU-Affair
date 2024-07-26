@@ -7,7 +7,7 @@
       </span>
 
       <swiper [spaceBetween]="30" [centeredSlides]="true" [autoplay]="{
-              delay: 5000,
+              delay: 4000,
               disableOnInteraction: false
             }" [pagination]="{
               clickable: true
@@ -36,9 +36,9 @@
       <ng-template id="videos" swiperSlide *ngFor="let free_video of free_video_data">
         <div (click)="OnFreeVideo(free_video)">
           <div class="contentarea">
-            <div class="subjectTitile">{{free_video?.SubjectName}}</div>
+            <div class="subjectTitile">{{free_video?.SubjectName | titlecase}}</div>
             <div class="videotitile">
-              {{free_video?.VideoTitle}}
+              {{free_video?.VideoTitle | titlecase}}
             </div>
             <div class="star">
               <img src="../../../assets/icon/star.png" alt="">
@@ -61,16 +61,16 @@
     <span class="no_message" *ngIf="!Suggestionvideo?.length">No Suggested Video</span>
 
     <swiper [spaceBetween]="30" [centeredSlides]="true" [autoplay]="{
-      delay: 6000,
+      delay: 5000,
       disableOnInteraction: false
     }" [grabCursor]="true" [navigation]="true" class="mySwiper">
 
       <ng-template id="videos" swiperSlide *ngFor="let Suggest of Suggestionvideo">
         <div (click)="onSuggesg(Suggest)">
           <div class="contentarea">
-            <div class="subjectTitile">{{Suggest?.SubjectName}}</div>
+            <div class="subjectTitile">{{Suggest?.SubjectName | titlecase}}</div>
             <div class="videotitile">
-              {{Suggest?.VideoTitle}}
+              {{Suggest?.VideoTitle | titlecase}}
             </div>
             <div class="star">
               <img src="../../../assets/icon/star.png" alt="">
@@ -85,17 +85,15 @@
     </swiper>
   </div>
 
-
-  <br>
   <div class="titileCard">
     <b>Suggested MCQ Test</b>
   </div>
   <span class="no_MCQ" *ngIf="!suggestedTest?.length">No Suggested MCQ Test</span>
   <div id="videos" (click)="onMCQ(suggestedTest)">
     <div class="contentarea">
-      <div lass="subjectTitile">{{suggestMCQ_sub}}</div>
+      <div class="subjectTitile">{{suggestMCQ_sub | titlecase}}</div>
       <div class="videotitile">
-        {{suggestMCQ_title}}
+        {{suggestMCQ_title | titlecase}}
       </div>
       <div class="star">
         <img src="../../../assets/icon/star.png" alt="">

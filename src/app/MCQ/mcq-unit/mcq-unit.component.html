@@ -10,7 +10,8 @@
     </div>
 
     <div id="box">
-        <mat-card class="example-card"  (click)="onMix()">
+        <p *ngIf="unit_data.length===0" style="text-align: center;">No Record Found</p>
+        <mat-card class="example-card" *ngIf="unit_data.length===1" (click)="onMix()">
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image1"></div>
                 <mat-card-title>Mix Units Test </mat-card-title>
