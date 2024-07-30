@@ -50,7 +50,6 @@ export class PaymentGetwayComponent {
       key: 'rzp_test_YGORtbwcCRzFxD',
       amount: amount,
       description: 'EDU Affair',
-      image: 'https://turningbrain.in/website/assets/images/logo.png',
       order_id: order_id,
       currency: 'INR',
       name: 'EDU Affair',
@@ -126,7 +125,6 @@ export class PaymentGetwayComponent {
       key: 'rzp_test_YGORtbwcCRzFxD',
       amount: amount,
       description: 'EDU Affair',
-      image: 'https://turningbrain.in/website/assets/images/logo.png',
       order_id: order_id.toString(),
       currency: 'INR',
       name: 'EDU Affair',
@@ -168,44 +166,4 @@ export class PaymentGetwayComponent {
         }
       );
   }
-
-
-
-
-  // initiatePayment(amount: number, orderId: string): void {
-  //   console.log('orderid'+ orderId);
-  //   const options = {
-  //     key: 'rzp_test_YGORtbwcCRzFxD', 
-  //     amount: amount,
-  //     currency: 'INR',
-  //     name: 'Turning Brain',
-  //     description: 'Purchase Description',
-  //     order_id: orderId,
-  //     handler: (response: any) => {
-  //       console.log(response);
-  //       if (response.razorpay_payment_id) {
-  //         // Payment success
-  //         alert('Payment Successful');
-  //       } else {
-  //         // Payment failed
-  //         alert('Payment Failed');
-  //       }
-  //     },
-  //     prefill: {
-  //       name: 'Akhilesh Kumar',
-  //       email: 'akhileshkr1098@gmail.com',
-  //       contact: '6202572787'
-  //     },
-  //     theme: {
-  //       color: '#F37254'
-  //     }
-  //   };
-
-  // }
-
-
-
-
-
-
 }

@@ -1,7 +1,10 @@
 <div id="wrapper">
     <mat-toolbar>
+        <img [src]="login_data.companyProfile ? imgUrl+login_data.companyProfile :'../../../assets/icon/macreelicon.png'"
+            alt="institute logo">
         <button mat-mini-fab color="warn" mat-dialog-close> <mat-icon>close</mat-icon></button>
     </mat-toolbar>
+
     <div id="imgarea">
         <img src="../.../../../../assets/icon/cup.jpeg" alt="" width="300px" height="100%">
         <div class="res" *ngIf="score < 40">Poor</div>
@@ -11,11 +14,20 @@
 
     <div id="contentarea">
         <h1> {{score}}% Score</h1>
-        <h3>Quiz completed successfully.</h3>
-        <p>Out of {{total_qty}} questions <br> your <b style="color: rgb(14, 73, 14);"> {{correct}} </b> answers are <b
-                style="color: rgb(14, 73, 14);"> correct </b>
-            <img src="../../../assets/icon/macreelicon.png" alt="" width="250px" height="80px">
-            <!-- <img [src]="login_data.profile ? imgUrl+login_data.profile :'../../../assets/icon/macreelicon.png'" alt=""
-            width="250px" height="80px"> -->
+        <h3>{{user_name.Name}}</h3>
+        <!-- <h3>Quiz completed successfully.</h3> -->
+        <p>
+            Out of {{total_qty}} questions your
+            <b style="color: rgb(14, 73, 14);"> {{correct}} </b>
+            answers are <b style="color: rgb(14, 73, 14);"> correct </b>
+        </p>
+
+        <div class="institute_name">
+            <a href="https://eduaffair.in/" target="_blank">
+                <p>Powered By:- <b style="color: #119895;">EDU Affair</b> </p>
+            </a>
+        </div>
+        <!-- <img src="../../../assets/Images/EDU affair app logo .png" alt="" width="250px" height="80px"> -->
+
     </div>
 </div>

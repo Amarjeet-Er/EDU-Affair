@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,11 +16,14 @@ export class VerifyWithEmailComponent {
   backup: number = 0
   emailOTP: any = 0
   country_name: any
+  userEmail: any;
   constructor(
     private _crud: CrudService,
     private _routing: Router,
     private _shared: SharedService,
-    private _fb: FormBuilder
+    private _fb: FormBuilder,
+    private http: HttpClient
+
   ) {
     this._shared.country_name.subscribe(
       (res: any) => {
@@ -57,7 +61,7 @@ export class VerifyWithEmailComponent {
 
     this._shared.email.subscribe(
       (res: any) => {
-        this.num = res
+        this.userEmail = res
       }
     )
 
@@ -116,5 +120,19 @@ export class VerifyWithEmailComponent {
     } else {
       this._shared.tostErrorTop('Invalid OTP')
     }
+  }
+
+  reSendOtp() {
+    this.http.post(`https://eduaffair.in/api/RegistrationOTP?EmailId=${this.userEmail}`, {}).subscribe(
+      (res: any) => {
+        if (res.message === 'OTP sent successfully') {
+          this._shared.tostSuccessBottom('OTP Resend on Your Email..')
+          this._shared.emailOTP.next(res.Otp)
+        }
+        if (res.Message === 'Email already exists') {
+          this._shared.tostErrorBottom('This email alredy exit')
+        }
+      }
+    )
   }
 }

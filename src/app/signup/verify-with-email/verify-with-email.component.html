@@ -7,7 +7,7 @@
     </div>
 
     <h2>Enter OTP</h2>
-    <p>OTP is send to {{num}} &nbsp; &nbsp; <a routerLink="/regemail">CHANGE</a></p>
+    <p>OTP is send to {{userEmail}} &nbsp; &nbsp; <a routerLink="/regemail">CHANGE</a></p>
   
     <form [formGroup]="otpForm">
         <input formControlName="inp1" id="digit1" type="number" maxlength="1" oninput="moveToNext(this, 'digit2')"
@@ -30,10 +30,10 @@
     </form><br>
 
     <p *ngIf="backup != 1"> Resend OTP in {{backup}}</p>
-    <button *ngIf="backup == 1" class="resend" >Resend</button>
+    <button *ngIf="backup == 1" class="resend" (click)="reSendOtp()">Resend</button>
     <br>
     <button class="btn" (click)="verify()">Verify</button>
-    <br><br><br> <br> <br> <br> <br>
+    <br><br><br> 
     <P>Having trouble ?</P>
-    <P>Write to us at <a>turningbrn@gmail.com</a></P>
+    <P>Write to us at <a>eduaffair@gmail.com</a></P>
 </div>

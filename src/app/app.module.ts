@@ -7,19 +7,19 @@ import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { SignupComponent } from './signup/signup.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSelectModule} from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewportComponent } from './viewport/viewport.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 import { CoursesComponent } from './home/courses/courses.component';
 import { SubjectComponent } from './home/subject/subject.component';
 import { PremiumComponent } from './home/premium/premium.component';
@@ -50,11 +50,11 @@ import { PremiumSubjectComponent } from './home/premium-subject/premium-subject.
 import { McqSubjectListComponent } from './MCQ/mcq-subject-list/mcq-subject-list.component';
 import { McqUnitComponent } from './MCQ/mcq-unit/mcq-unit.component';
 import { McqListComponent } from './MCQ/mcq-list/mcq-list.component';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { ResultComponent } from './MCQ/result/result.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { VerifyWithMobComponent } from './signup/verify-with-mob/verify-with-mob.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ProLockComponent } from './pro-lock/pro-lock.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { SettingComponent } from './setting/setting/setting.component';
@@ -70,7 +70,7 @@ import { RequstCallComponent } from './home/requst-call/requst-call.component';
 import { ReviewComponent } from './MCQ/review/review.component';
 import { IntroducatioComponent } from './MCQ/introducatio/introducatio.component';
 import { GetDeviesInfoComponent } from './home/get-devies-info/get-devies-info.component';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SendSMSComponent } from './signup/send-sms/send-sms.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {
@@ -150,15 +150,15 @@ import {
     MatListModule,
     HttpClientModule,
     NgxUiLoaderModule,
-    NgxUiLoaderHttpModule.forRoot({ }),
+    NgxUiLoaderHttpModule.forRoot({}),
     SwiperModule,
     MatRadioModule,
     MatDialogModule,
     MatSnackBarModule,
     MatCheckboxModule,
-    SocialLoginModule ,
-    
-    
+    SocialLoginModule,
+
+
 
   ],
   providers: [
@@ -183,7 +183,7 @@ import {
         }
       } as SocialAuthServiceConfig,
     }
-  ], 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

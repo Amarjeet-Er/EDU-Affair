@@ -1,11 +1,11 @@
 <div id="wrapper">
     <div id="header">
-        <img src="../../../assets/icon/otp.jpg" alt="" width="300px" height="250px" >
+        <img src="../../../assets/icon/otp.jpg" alt="" width="300px" height="250px">
     </div>
 
     <h2>Enter OTP</h2>
     <p>OTP is send to {{num}} &nbsp; &nbsp; <a routerLink="/regmobile">CHANGE</a></p>
-  
+
     <form [formGroup]="otpForm">
         <input formControlName="inp1" id="digit1" type="number" maxlength="1" oninput="moveToNext(this, 'digit2')"
             onKeyPress="if(this.value.length==1) return false;">
@@ -27,10 +27,10 @@
     </form><br>
 
     <p *ngIf="backup != 1"> Resend OTP in {{backup}}</p>
-    <button *ngIf="backup == 1" class="resend" >Resend</button>
+    <button *ngIf="backup == 1" class="resend">Resend</button>
     <br>
     <button class="btn" (click)="verify()">Verify</button>
-    <br><br><br> <br> <br> <br> <br>
+    <br><br><br>
     <P>Having trouble ?</P>
-    <P>Write to us at <a>turningbrn@gmail.com</a></P>
+    <P>Write to us at <a>eduaffair@gmail.com</a></P>
 </div>

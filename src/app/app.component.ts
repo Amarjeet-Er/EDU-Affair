@@ -16,8 +16,8 @@ import { PrivacyScreen } from '@capacitor-community/privacy-screen';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit , AfterViewInit {
-  AppCurrentVersion = 2.6
-  title = 'TurningBrain';
+  AppCurrentVersion = 0.1
+  title = 'EduA ffair';
   login: any
   login_data: any
   diviesDeatils: any
