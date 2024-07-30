@@ -55,7 +55,6 @@ export class McqListComponent implements OnInit {
 
     this._shared.mcqType.subscribe(
       (res: any) => {
-        console.log(res);
         if (res == 'mix') {
           this.getMIx(this.subject_id, this.InstID)
         }
@@ -74,9 +73,7 @@ export class McqListComponent implements OnInit {
   get_maix_MCQ(id: any) {
     this._crud.get_suggess_mcq(this.login_data.inst_id, id).subscribe(
       (res: any) => {
-        console.log(res);
         this.mcq_data = res
-        console.log(this.one_mcq_data);
         this.qustionChange(this.qustion_no)
       }
     )
@@ -89,9 +86,7 @@ export class McqListComponent implements OnInit {
     }
     this._crud.get_mix_mcq(data).subscribe(
       (res: any) => {
-        console.log(res);
         this.mcq_data = res
-        console.log(this.one_mcq_data);
         this.qustionChange(this.qustion_no)
       }
     )
@@ -105,12 +100,10 @@ export class McqListComponent implements OnInit {
       "Unit": unit_id,
       "Inst_Id": InstID,
     }
-    console.log(data);
 
     this._crud.get_mcq(data).subscribe(
       (res: any) => {
         this.mcq_data = res
-        console.log(this.one_mcq_data);
         this.qustionChange(this.qustion_no)
       }
     )
@@ -118,7 +111,6 @@ export class McqListComponent implements OnInit {
 
   qustionChange(num: number) {
     this.one_mcq_data = this.mcq_data[num]
-    console.log(this.one_mcq_data);
   }
 
   OnNext() {
@@ -133,16 +125,14 @@ export class McqListComponent implements OnInit {
   }
 
   OnCheck(data: any, opction: any) {
-    console.log(this.isAnswered);
-
     if (this.isAnswered === true) {
       return
     } else {
       this.marks_mcq(data)
       if (this.one_mcq_data.CorrectAns === data) {
         this.result_data = this.result_data + 1
-        console.log('total_qustion : ' + this.qustion_no);
-        console.log('correct answer : ' + this.result_data);
+        // console.log('total_qustion : ' + this.qustion_no);
+        // console.log('correct answer : ' + this.result_data);
 
         opction.classList.add('correct');
         opction.classList.remove('incorrect');
@@ -161,7 +151,6 @@ export class McqListComponent implements OnInit {
   review() {
     this._crud.get_review_mcq(this.login_data.inst_id, this.login_data.id).subscribe(
       (res: any) => {
-        console.log(res);
         if (res.length > 0) {
           this._router.navigate(['/mcqreview'])
         }
@@ -171,10 +160,10 @@ export class McqListComponent implements OnInit {
 
 
   marks_mcq(opt: string) {
-    console.log("userid" + this.login_data.id);
-    console.log("qustion id" + this.one_mcq_data.Id);
+    // console.log("userid" + this.login_data.id);
+    // console.log("qustion id" + this.one_mcq_data.Id);
 
-    console.log("marks" + opt);
+    // console.log("marks" + opt);
 
     const fromdata = new FormData()
     fromdata.append('userid', this.login_data.id)
@@ -196,7 +185,6 @@ export class McqListComponent implements OnInit {
   get_review() {
     this._crud.get_review_mcq(this.login_data.inst_id, this.login_data.id).subscribe(
       (res: any) => {
-        console.log(res);
         if (res.length > 0) {
           // this._shared.     
           const qno = this.qustion_no + 1

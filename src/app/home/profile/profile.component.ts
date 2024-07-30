@@ -117,6 +117,7 @@ export class ProfileComponent implements OnInit {
   isMobile: boolean = true
   isEmail: boolean = true
   isCourse: boolean = true
+  isCompany: boolean = true
   enableValidation(val: string) {
     console.log(val);
 
@@ -128,6 +129,9 @@ export class ProfileComponent implements OnInit {
     }
     if (val == 'course') {
       this.isCourse = false
+    }
+    if (val == 'companyName') {
+      this.isCompany = false
     }
 
   }
@@ -141,6 +145,9 @@ export class ProfileComponent implements OnInit {
     }
     if (val == 'course') {
       this.isCourse = true
+    }
+    if (val == 'companyName') {
+      this.isCompany = true
     }
   }
 }

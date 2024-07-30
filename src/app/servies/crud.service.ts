@@ -145,6 +145,10 @@ export class CrudService {
     return this.http.get(`${this.base_url}TermsCondition?Inst_Id=${inst_id}`)
   }
 
+  get_about(inst_id: number) {
+    return this.http.get(`${this.base_url}AboutUs?Inst_Id=${inst_id}`)
+  }
+
   ////////// yaha tak complate ho geya hai but forget password ko chhor kar ab niche ka karna hai /////////
 
 

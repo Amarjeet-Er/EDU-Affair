@@ -44,7 +44,6 @@ export class VideoslistComponent implements OnInit {
 
     this._shared.img_url.subscribe(
       (res: any) => {
-        console.log(res);
         this.img_url = res
       }
     )
@@ -56,13 +55,13 @@ export class VideoslistComponent implements OnInit {
   }
   SearchClose() {
     this.onSearch = false
-    this.onSearchHead = true
+    this.onSearchHead = true;
+    window.location.reload();
   }
 
   get_videoList(id: number) {
     this._crud.get_videos(this.login_id.inst_id, id).subscribe(
       (res: any) => {
-        console.log(res);
         if (res && res) {
           this.video_data = res.filter((video: any) => video.VideoType === "Paid");
           this.filter_data = res.filter((video: any) => video.VideoType === "Paid");
@@ -89,8 +88,6 @@ export class VideoslistComponent implements OnInit {
   getValidity(id: any) {
     this._crud.getValidity(id, this.login_id.inst_id).subscribe(
       (res: any) => {
-        console.log(res, 'log in sdsdfsddfs');
-        console.log(res.SubscriptionStatus);
         if (res.SubscriptionStatus == 1) {
           this.logDeviceInfo(id)
         } else {

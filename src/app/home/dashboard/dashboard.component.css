@@ -6,8 +6,6 @@
 #banner {
     width: 100%;
     height: 220px;
-    border-radius: 10px;
-    line-height: 220px;
     text-align: center;
     position: sticky;
     top: 0px;
@@ -15,7 +13,8 @@
 }
 
 .slider_img {
-    height: 215px;
+    width: 100%;
+    height: 220px;
 }
 
 #videos {
@@ -66,12 +65,21 @@
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: inline-block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+    white-space: normal;
 }
 
 .star {
     width: 100%;
     position: relative;
     bottom: 3px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
 }
 
 .star img {
@@ -101,6 +109,7 @@
     top: 35px;
     left: 31px;
 }
+
 .no_MCQ {
     position: relative;
     top: 35px;

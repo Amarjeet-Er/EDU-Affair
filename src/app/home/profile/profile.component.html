@@ -62,6 +62,13 @@
         <mat-hint *ngIf="!isCourse">This entity can not be edited</mat-hint>
       </mat-form-field>
 
+      <mat-form-field class="example-full-width">
+        <mat-label>Institute Name</mat-label>
+        <input matInput [value]="login_data.companyName" readonly (focus)="enableValidation('companyName')"
+          (blur)="disableValidation('companyName')">
+        <mat-hint *ngIf="!isCompany">This entity can not be edited</mat-hint>
+      </mat-form-field>
+
       <br>
       <h1> Other Details </h1>
       <br>

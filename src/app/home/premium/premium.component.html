@@ -29,44 +29,30 @@
                 </div>
             </div>
 
-
-            <!-- <div class="card-premium"  (click)="onPayment(1)">
-                <div class="card-header header-premium">
-                    <h1>{{premium_data[1].package_name}}</h1>
-                </div>
-                <div class="card-body">
-
-                    <h2>{{premium_data[1].mrp| currency :'INR' }}</h2>
-
-
-                    <div class="card-element-hidden-premium">
-                        <ul class="card-element-container">
-                            <li class="card-element">{{premium[1].plan_p1}}</li>
-                            <li class="card-element"> {{premium[1].plan_p2}}</li>
-                            <li class="card-element"> {{premium[1].plan_p3}}</li>
-                            <li class="card-element">{{premium[1].plan_p4}} </li>
-                        </ul>
-                        <button class="btn btn-premium">BUY NOW</button>
-                    </div>
-                </div>
-            </div> -->
         </main>
     </body>
+
+    <!-- <div class="NotAvailable" *ngIf="user_data?.SubscriptionStatus==1">
+        <p> You have purchased the subjects for the course you are enrolled.</p>
+    </div> -->
 
     <div id="footer">
         <mat-card>
             <h1>Instruction</h1>
-            <p>To ensure smooth transactions and a hassle-free experience, please remember to complete your payment on
-                your mobile device within the app without navigating away. Your cooperation in this matter is greatly
+            <p>To ensure smooth transactions and a hassle-free experience, please remember to complete your payment
+                on
+                your mobile device within the app without navigating away. Your cooperation in this matter is
+                greatly
                 appreciated and helps us maintain efficient service for all our users.</p>
-           
+
         </mat-card>
         <mat-card>
             <h1>Have more queries ?</h1>
         </mat-card>
-        <a href="tel:8076331016">
+        <a [href]="'tel:' + Mobile_No">
             <mat-card>
-                <p><mat-icon [classList]="8076331016"> call</mat-icon>&nbsp;Call us to know more about the plan. </p>
+                <p><mat-icon> call</mat-icon>&nbsp;Call us to know more about the plan.
+                </p>
             </mat-card>
         </a>
 
@@ -76,10 +62,10 @@
             </mat-card>
         </a>
 
-        <a href="mailto:turningbrn@gmail.com">
+        <a href="mailto:Email_Id">
             <mat-card>
                 <p><mat-icon> email</mat-icon>
-                    &nbsp; Email : eduaffair@gmail.com</p>
+                    &nbsp; Email : {{Email_Id}}</p>
             </mat-card>
         </a>
 

@@ -135,3 +135,18 @@ a mat-icon {
   position: relative;
   top: 7px;
 }
+/* .NotAvailable{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.NotAvailable>p{
+  background: linear-gradient(135deg, #eea300, #ee5700);
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  font-size: 20px;
+  line-height: 30px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+} */

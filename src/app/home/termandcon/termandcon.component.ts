@@ -19,6 +19,8 @@ export class TermandconComponent implements OnInit {
   ngOnInit(): void {
     this._curd.get_terms_condition(this.login_data.inst_id).subscribe(
       (data: any) => {
+        console.log(data, 'data');
+        
         this.termsAndConditons = data.Data;
         console.log(this.termsAndConditons, 'teh');
       });

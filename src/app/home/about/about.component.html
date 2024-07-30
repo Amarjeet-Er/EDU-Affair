@@ -7,21 +7,24 @@
         <span></span>
     </mat-toolbar>
 
+    <div id="content" *ngIf="aboutUs?.length===null">
+        <h2> Welcome to EduAffair! </h2>
+        At EduAffair, we believe that education is the key to unlocking a brighter future. Our mission is to bridge the
+        gap between aspiring students and their educational goals, offering a comprehensive platform designed to guide
+        and support learners through every stage of their academic journey. <br><br>
+
+        <h4> Who We Are </h4>
+        EduAffair is a dedicated team of education professionals, career counselors, and tech enthusiasts committed to
+        making educational resources accessible and manageable for everyone. With a deep understanding of the diverse
+        needs of students, we provide a range of services and tools tailored to help you make informed decisions about
+        your education.
+    </div>
     <div id="content">
-        <h1>About Dr. Preeti Tyagi</h1>
-        Dr. Preeti Tyagi (MBBS, MD) is widely recognized as one of the top Medical Physiology faculty in India. With a
-        decade of dedicated service in the medical field, she brings over ten years of experience in teaching students
-        across various medical disciplines including MBBS first year, Foreign Medical graduates (FMGE), NEET-PG, BDS,
-        BAMS, Nursing and other allied medical sciences. Dr. Tyagi excelled in her academic pursuits, securing the 6th
-        rank during her MBBS entrance exam. Dr. Tyagi's teaching style is renowned for its effectiveness, setting her
-        apart as an exceptional educator. For those seeking access to her Physiology video lectures, The EDU Affair
-        App is Best Mobile Application for Medical Students.
-        <br><br>
-        <p class="devloped">Developed by</p>
-        <img src="../../../assets/icon/macreellogo.png" alt="" width="150px" height="60px">
-        <br><br>
+        <div class="termsColor" [innerHTML]="aboutUs"> </div>
     </div>
 
-    <!-- Macreel Infosoft Pvt.Ltd. -->
-
+    <div class="devloped">
+        <p>Developed by</p>
+        <img src="../../../assets/icon/macreellogo.png" alt="" width="150px" height="60px">
+    </div>
 </div>

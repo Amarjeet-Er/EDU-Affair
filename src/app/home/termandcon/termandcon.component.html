@@ -7,6 +7,49 @@
         <span></span>
     </mat-toolbar>
 
+    <div id="content" *ngIf="termsAndConditons?.length===null">
+        <ol start="1">
+            <li><b>Introduction</b>
+                <ul type="disc">
+                    <li><b>Acceptance of Terms: </b>By accessing or using Eduaffair.in, you agree to comply with and be
+                        bound by these Terms and Conditions.</li>
+                    <li><b>Changes: </b>Eduaffair.in reserves the right to update or modify these Terms at any time, and
+                        it is your responsibility to review them regularly.</li>
+                </ul>
+            </li>
+            <li><b>Use of the Website</b>
+                <ul type="disc">
+                    <li><b>Eligibility: </b> You must be at least [insert age] years old to use this website.</li>
+                    <li><b>Account Responsibilities: </b>If you create an account, you are responsible for maintaining
+                        the confidentiality of your account information and for all activities that occur under your
+                        account.</li>
+                    <li><b>Prohibited Activities: </b>You agree not to engage in any activity that interferes with or
+                        disrupts the website or servers.</li>
+                </ul>
+            </li>
+            <li><b>Content</b>
+                <ul type="disc">
+                    <li><b>Intellectual Property: </b>All content on Eduaffair.in, including but not limited to text,
+                        graphics, logos, and software, is the property of Eduaffair.in or its content suppliers and is
+                        protected by intellectual property laws.</li>
+                    <li><b>User Content:</b> You retain ownership of any content you submit to the website but grant
+                        Eduaffair.in a license to use, display, and distribute that content.</li>
+                </ul>
+            </li>
+            <li><b>Third-Party Links</b>
+                <ul type="disc">
+                    <li><b>External Links: </b>Eduaffair.in may contain links to third-party websites. We do not endorse
+                        or assume responsibility for the content or practices of any third-party sites.</li>
+                </ul>
+            </li>
+            <li><b>Privacy Policy</b>
+                <ul type="disc">
+                    <li><b>Data Collection: </b>Our Privacy Policy outlines how we collect, use, and protect your
+                        personal information. By using Eduaffair.in, you consent to our data practices.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
     <div id="content">
         <div class="termsColor" [innerHTML]="termsAndConditons"> </div>
     </div>

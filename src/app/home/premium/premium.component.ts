@@ -23,6 +23,8 @@ export class PremiumComponent implements OnInit {
   payData: any
   login:any;
   login_id: any;
+  Mobile_No: any;
+  Email_Id: any;
   constructor(
     private _crud: CrudService,
     private razorpayService: RazorpayService,
@@ -33,6 +35,11 @@ export class PremiumComponent implements OnInit {
   ) { 
     this.login = localStorage.getItem('loginData')
     this.login_id = JSON.parse(this.login)
+
+    this.Mobile_No = this.login_id.MobileNo
+    this.Email_Id = this.login_id.EmailId
+    console.log(this.Mobile_No, 'mobile');
+    console.log(this.Email_Id, 'Email');
   }
 
   ngOnInit() {
@@ -54,7 +61,7 @@ export class PremiumComponent implements OnInit {
     }
     this._crud.get_packages(fromdata).subscribe(
       (res: any) => {
-        console.log(res);
+        console.log(res, 'pre');
         this.premium_data = res
       }, (error) => {
         console.log(error);
@@ -241,9 +248,6 @@ export class PremiumComponent implements OnInit {
       }
     )
   }
-
-
-
 
   async logDeviceInfo() {
     try {

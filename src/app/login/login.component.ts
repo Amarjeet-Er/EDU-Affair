@@ -54,6 +54,10 @@ export class LoginComponent implements OnInit {
                 status: res.Status,
                 profile: res.Profile,
                 inst_id: res.Inst_id,
+                MobileNo: res.MobileNo,
+                EmailId: res.Emailid,
+                companyName: res.companyName,
+                companyProfile: res.companyProfile,
               }
 
               this._shared.tostSuccessBottom('Login Successfully...  ')

@@ -45,7 +45,6 @@ export class VideoPlayComponent implements OnInit {
 
     this._shared.img_url.subscribe(
       (res: any) => {
-        console.log(res);
         this.img_url = res
       }
     )
@@ -99,7 +98,6 @@ export class VideoPlayComponent implements OnInit {
         this.video_title = data.VideoTitle
         this.video_desc = data.VideoDescription
         const url = data.VideoUrl
-        console.log(url);
         this.unSafeurl = url
         this.play_video(url)
       } else {

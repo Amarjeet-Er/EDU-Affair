@@ -21,6 +21,7 @@ mat-toolbar {
     background-color: var(--color-1);
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
+    margin-top: 1px;
 }
 
 #header .imgarea {

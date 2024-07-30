@@ -12,7 +12,9 @@ export class ContactusComponent {
   login: any
   login_data: any
   loginId: any
-  login_Id: any
+  login_Id: any;
+  Mobile_No: any;
+  Email_Id: any;
   constructor(
     private _crud: CrudService,
     private _shared: SharedService
@@ -22,8 +24,12 @@ export class ContactusComponent {
 
     this.loginId = localStorage.getItem('loginData')
     this.login_Id = JSON.parse(this.loginId)
+    this.Mobile_No = this.login_Id.MobileNo
+    this.Email_Id = this.login_Id.EmailId
+    console.log(this.Mobile_No, 'mobile');
+    console.log(this.Email_Id, 'Email');
     
-  }
+  } 
   RequstCall() {
     const data = this.login_data
     const instData = this.login_Id.inst_id;
@@ -35,7 +41,7 @@ export class ContactusComponent {
     fbData.append('Inst_Id', instData);
     this.send_mail(fbData)
   }
-  
+
   send_mail(data: any) {
     this._crud.GetACallBack(data).subscribe(
       (res: any) => {
@@ -46,5 +52,7 @@ export class ContactusComponent {
       }
     )
   }
-
+  mobileNo(data:any){
+    console.log(data);
+  }
 }

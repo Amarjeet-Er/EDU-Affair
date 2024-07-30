@@ -45,7 +45,6 @@ export class DashboardComponent implements OnInit {
 
     this._shared.img_url.subscribe(
       (res: any) => {
-        console.log(res);
         this.img_url = res
       }
     )
@@ -75,7 +74,6 @@ export class DashboardComponent implements OnInit {
     this._crud.get_free_Video(this.login_data.inst_id).subscribe(
       (res: any) => {
         this.free_video_data = res.filter((free_video: any) => free_video.VideoType === "Unpaid");
-        console.log(this.free_video_data, 'free');
       }
     )
   }
@@ -117,7 +115,6 @@ export class DashboardComponent implements OnInit {
     this._crud.get_Suggestionvideo(data).subscribe(
       (res: any) => {
         this.Suggestionvideo = res.filter((video: any) => video.VideoType === "Paid");
-        console.log(this.Suggestionvideo, 'video');
       }
     )
   }
@@ -141,7 +138,6 @@ export class DashboardComponent implements OnInit {
 
   onMCQ(suggestedTest: any) {
     if (suggestedTest == 0) {
-      console.log(suggestedTest, 'test');
       return
     }
     else {

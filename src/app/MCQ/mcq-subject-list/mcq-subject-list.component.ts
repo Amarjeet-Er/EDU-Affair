@@ -33,7 +33,6 @@ export class McqSubjectListComponent implements OnInit {
   get_subject(id: number) {
     this._crud.get_subject(id, this.login_data.inst_id).subscribe(
       (res: any) => {
-        console.log(res);
         this.subject_data = res
       }
     )
