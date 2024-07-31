@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SharedService } from 'src/app/servies/shared.service';
+import { PrivacyScreen } from '@capacitor-community/privacy-screen';
 
 @Component({
   selector: 'app-result',
@@ -45,5 +46,13 @@ export class ResultComponent implements OnInit {
     this.score = Math.round(this.dialogData.percentage)
     console.log(this.totalMark, 'dsdsds');
 
+  }
+
+  ngAfterViewInit(): void {
+    PrivacyScreen.disable().then(() => {
+      console.log('Privacy enable');
+    }).catch(error => {
+      console.log('Error disabling privacy:', error);
+    });
   }
 }
