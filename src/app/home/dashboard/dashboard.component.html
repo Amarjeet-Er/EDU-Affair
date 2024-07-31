@@ -46,7 +46,7 @@
             </div>
           </div>
           <div class="imgarea">
-            <img [src]="free_video?.ImageUrl ? img_url+free_video?.ImageUrl :'../../../assets/Images/thumanal.png'"
+            <img [src]="free_video?.VideoLogo ? img_url+free_video?.VideoLogo : free_video?.ImageUrl ? img_url+free_video?.ImageUrl :'../../../assets/Images/thumanal.png'"
               alt="">
           </div>
         </div>
@@ -78,7 +78,9 @@
             </div>
           </div>
           <div class="imgarea">
-            <img [src]="Suggest?.ImageUrl ? img_url+Suggest?.ImageUrl :'../../../assets/Images/thumanal.png'" alt="">
+            <img
+              [src]="Suggest?.videoLogo ? img_url+Suggest?.videoLogo : Suggest?.ImageUrl ? img_url+Suggest?.ImageUrl :'../../../assets/Images/thumanal.png'"
+              alt="">
           </div>
         </div>
       </ng-template>

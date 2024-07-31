@@ -40,6 +40,8 @@ export class PremiumDescriptionComponent implements OnInit {
 
     this.login = localStorage.getItem('loginData')
     this.loginData = JSON.parse(this.login)
+    console.log(this.loginData.companyProfile, 'companyProfile');
+    console.log(this.loginData.companyName, 'companyName');
 
   }
 
@@ -51,7 +53,6 @@ export class PremiumDescriptionComponent implements OnInit {
     this.data = localStorage.getItem('PayDesc')
     this.premium_data = JSON.parse(this.data)
     console.log(this.premium_data);
-
   }
   payNow(data: any) {
     console.log(this.toppings.get('condations')?.value);
@@ -82,16 +83,17 @@ export class PremiumDescriptionComponent implements OnInit {
       );
   }
 
+  
   async payWithLive(order_id: string, amount: string) {
     const options = {
       key: 'rzp_test_YGORtbwcCRzFxD', //test
       // key: 'rzp_live_nrumEje16i8mje', //live
       amount: amount,
-      description: 'EDU Affair',
-      // image: '../../assets/Images/EDU affair app logo .png',
+      description: '',
+      image: 'https://eduaffair.in' + this.loginData.companyProfile,
       order_id: order_id,
       currency: 'INR',
-      name: 'EDU Affair',
+      name: this.loginData.companyName,
       prefill: {
         name: this.user_data.Name,
         email: this.user_data.EmailId,
@@ -138,7 +140,7 @@ export class PremiumDescriptionComponent implements OnInit {
       );
   }
 
-  PaymentFaildInsert(res: any) {
+  PaymentFaildInsert(res: any) {    
     const data = {
       Name: this.user_data.Name,
       MobileNo: this.user_data.MobileNo,
@@ -155,10 +157,10 @@ export class PremiumDescriptionComponent implements OnInit {
       PayFailedReason: res.reason,
       PaymentMode: "through UPI",
     }
+    console.log(data, 'Fail data all');
 
     this.razorpayService.PaymentFaildInsert(data).subscribe(
       (res: any) => {
-        console.log(res);
         this._shared.tostErrorTop(res)
       }
     )

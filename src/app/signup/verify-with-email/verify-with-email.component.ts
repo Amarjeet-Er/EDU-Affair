@@ -12,7 +12,6 @@ import { SharedService } from 'src/app/servies/shared.service';
 })
 export class VerifyWithEmailComponent {
   otpForm !: FormGroup
-  num: string = ''
   backup: number = 0
   emailOTP: any = 0
   country_name: any
@@ -116,7 +115,7 @@ export class VerifyWithEmailComponent {
         this._routing.navigate(['/signupwithemail'])
 
       }
-      this._shared.email.next(this.num)
+      this._shared.email.next(this.userEmail)
     } else {
       this._shared.tostErrorTop('Invalid OTP')
     }

@@ -36,9 +36,14 @@ mat-toolbar {
     align-items: center;
 }
 
-.devloped>p {
+.devloped>a>p {
     padding: 0px;
     margin-right: 10px;
+    color: black;
+}
+
+.devloped>a {
+    text-decoration: none;
 }
 
 #content h2 {

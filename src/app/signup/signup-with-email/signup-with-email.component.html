@@ -16,7 +16,10 @@
 
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Mobile Number</mat-label>
-                <input type="number" matInput placeholder="Enter your Mobile Number" formControlName="MobileNo">
+                <input type="number" matInput placeholder="Enter your Mobile Number"
+                    onkeypress=" return this.value.length < 10"
+                    oninput="if(this.value.length>=10) {this.value = this.value.sclice (0,10);}"
+                    formControlName="MobileNo">
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="example-full-width">

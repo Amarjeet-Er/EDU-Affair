@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TurningBrain": {
+    "EduAffair": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "TurningBrain:build:production"
+              "browserTarget": "EduAffair:build:production"
             },
             "development": {
-              "browserTarget": "TurningBrain:build:development"
+              "browserTarget": "EduAffair:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TurningBrain:build"
+            "browserTarget": "EduAffair:build"
           }
         },
         "test": {
