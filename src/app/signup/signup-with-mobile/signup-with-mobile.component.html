@@ -61,28 +61,26 @@
 
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Password</mat-label>
-                <input matInput formControlName="Password" type="text" placeholder="Abc@1234"
-                    (keyup.enter)="onSubmit(collageVal.value)">
-
-                <mat-hint align="end" *ngIf="regForm.get('Password')?.errors?.['required']">
-                    Password is required
+                <input (keyup.enter)="onSubmit(collageVal.value)" matInput formControlName="Password"
+                    placeholder="Abc@1234">
+                <mat-hint>
+                    <span *ngIf="regForm.get('Password')?.errors?.['required']">Password is required</span>
+                    <ng-container
+                        *ngIf="regForm.get('Password')?.invalid && (regForm.get('Password')?.dirty || regForm.get('Password')?.touched)">
+                        <span *ngIf="regForm.get('Password')?.errors?.['pattern']">Invalid password format</span>
+                        <span
+                            *ngIf="!regForm.get('Password')?.errors?.['pattern'] && regForm.get('Password')?.errors?.['minlength']">Password
+                            must be at least 8 characters long</span>
+                        <span
+                            *ngIf="!regForm.get('Password')?.errors?.['pattern'] && regForm.get('Password')?.errors?.['maxlength']">Password
+                            cannot exceed 30 characters</span>
+                    </ng-container>
                 </mat-hint>
-
-                <mat-hint align="end" *ngIf="regForm.get('Password')?.errors?.['minlength']">
-                    Password must be at least 8 characters long
-                </mat-hint>
-                <mat-hint align="end" *ngIf="regForm.get('Password')?.errors?.['pattern']">
-                    Invalid password format
-                </mat-hint>
-
             </mat-form-field>
-
-
 
             <br><br>
             <button class="btn" (click)="onSubmit(collageVal.value)">SignUp</button>
             <br><br>
-
 
             <span class="login">Do you have an account ? <a routerLink="/">Login</a></span>
 

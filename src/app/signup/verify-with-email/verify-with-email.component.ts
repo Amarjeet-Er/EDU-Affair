@@ -107,7 +107,7 @@ export class VerifyWithEmailComponent {
     console.log('input otp' + isotp);
 
     if (isotp == this.emailOTP) {
-      this._shared.tostSuccessTop('OTP Match Successfully')
+      this._shared.tostSuccessTop('OTP Verified Successfully')
       if (this.country_name == 'India') {
         this._routing.navigate(['/signupwithmobile'])
 

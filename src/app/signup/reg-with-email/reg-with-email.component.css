@@ -45,3 +45,9 @@ mat-toolbar {
     background-color: var(--button);
     height: 45px;
 }
+
+.container{
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: auto;
+}

@@ -3,34 +3,38 @@
         <img src="../../../assets/icon/otp.jpg" alt="" width="300px" height="250px">
     </div>
 
-    <h2>Enter OTP</h2>
-    <p>OTP is send to {{num}} &nbsp; &nbsp; <a routerLink="/regmobile">CHANGE</a></p>
+    <div class="container">
 
-    <form [formGroup]="otpForm">
-        <input formControlName="inp1" id="digit1" type="number" maxlength="1" oninput="moveToNext(this, 'digit2')"
-            onKeyPress="if(this.value.length==1) return false;">
 
-        <input formControlName="inp2" id="digit2" type="number" maxlength="1" oninput="moveToNext(this, 'digit3')"
-            onKeyPress="if(this.value.length==1) return false;">
+        <h2>Enter OTP</h2>
+        <p>OTP is send to {{num}} &nbsp; &nbsp; <a routerLink="/regmobile">CHANGE</a></p>
 
-        <input formControlName="inp3" id="digit3" type="number" maxlength="1" oninput="moveToNext(this, 'digit4')"
-            onKeyPress="if(this.value.length==1) return false;">
+        <form [formGroup]="otpForm">
+            <input formControlName="inp1" id="digit1" type="number" maxlength="1" oninput="moveToNext(this, 'digit2')"
+                onKeyPress="if(this.value.length==1) return false;">
 
-        <input formControlName="inp4" id="digit4" type="number" maxlength="1" oninput="moveToNext(this, 'digit5')"
-            onKeyPress="if(this.value.length==1) return false;">
+            <input formControlName="inp2" id="digit2" type="number" maxlength="1" oninput="moveToNext(this, 'digit3')"
+                onKeyPress="if(this.value.length==1) return false;">
 
-        <input formControlName="inp5" id="digit5" type="number" maxlength="1" oninput="moveToNext(this, 'digit6')"
-            onKeyPress="if(this.value.length==1) return false;">
+            <input formControlName="inp3" id="digit3" type="number" maxlength="1" oninput="moveToNext(this, 'digit4')"
+                onKeyPress="if(this.value.length==1) return false;">
 
-        <input formControlName="inp6" id="digit6" type="number" maxlength="1" oninput="moveToNext(this, 'digit7')"
-            onKeyPress="if(this.value.length==1) return false;">
-    </form><br>
+            <input formControlName="inp4" id="digit4" type="number" maxlength="1" oninput="moveToNext(this, 'digit5')"
+                onKeyPress="if(this.value.length==1) return false;">
 
-    <p *ngIf="backup != 1"> Resend OTP in {{backup}}</p>
-    <button *ngIf="backup == 1" class="resend">Resend</button>
-    <br>
-    <button class="btn" (click)="verify()">Verify</button>
-    <br><br><br>
-    <P>Having trouble ?</P>
-    <P>Write to us at <a>eduaffair@gmail.com</a></P>
+            <input formControlName="inp5" id="digit5" type="number" maxlength="1" oninput="moveToNext(this, 'digit6')"
+                onKeyPress="if(this.value.length==1) return false;">
+
+            <input formControlName="inp6" id="digit6" type="number" maxlength="1" oninput="moveToNext(this, 'digit7')"
+                onKeyPress="if(this.value.length==1) return false;">
+        </form><br>
+
+        <p *ngIf="backup != 1"> Resend OTP in {{backup}}</p>
+        <button *ngIf="backup == 1" class="resend">Resend</button>
+        <br>
+        <button class="btn" (click)="verify()">Verify</button>
+        <br><br><br>
+        <P>Having trouble ?</P>
+        <P>Write to us at <a>eduaffair@gmail.com</a></P>
+    </div>
 </div>

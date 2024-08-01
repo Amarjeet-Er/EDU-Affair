@@ -47,7 +47,7 @@ export class SignupWithMobileComponent {
     this._crud.getCallageByState(state, this.inst_id).subscribe(
       (res: any) => {
         console.log(res, 'sdsd');
-        
+
         this.collages = res
         console.log(this.collages);
       }
@@ -79,14 +79,11 @@ export class SignupWithMobileComponent {
           Validators.required,
           Validators.minLength(8),
           Validators.maxLength(30),
-          Validators.pattern(/[A-Z]/),
-          Validators.pattern(/[a-z]/),
-          Validators.pattern(/[0-9]/),
-          Validators.pattern(/[!@#$]/),
+          Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).+$/)
         ]
       ],
+    });
 
-    })
     this._shared.email.subscribe(
       (res: any) => {
         console.log(res);
@@ -106,7 +103,7 @@ export class SignupWithMobileComponent {
     )
   }
   get_inst_id_by_course(inst_id: string) {
-    this.inst_id=inst_id
+    this.inst_id = inst_id
     this._crud.get_select_course(inst_id).subscribe(
       (res: any) => {
         this.courses = res;

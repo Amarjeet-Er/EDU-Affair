@@ -16,6 +16,8 @@ mat-toolbar {
 
 #box {
     width: 100%;
+    height: calc(100vh - 60px);
+    overflow: auto;
 }
 
 #from_area {
@@ -38,4 +40,7 @@ mat-toolbar {
     left: 10%;
     outline: none;
     border: none;
+}
+.login>a{
+    text-decoration: none;
 }

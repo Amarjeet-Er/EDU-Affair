@@ -42,13 +42,10 @@ export class SignupWithEmailComponent {
           Validators.required,
           Validators.minLength(8),
           Validators.maxLength(30),
-          Validators.pattern(/[A-Z]/),
-          Validators.pattern(/[a-z]/),
-          Validators.pattern(/[0-9]/),
-          Validators.pattern(/[!@#$]/),
+          Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*]).+$/)
         ]
       ],
-    })
+    });
 
     this._shared.email.subscribe(
       (res: any) => {
@@ -58,7 +55,7 @@ export class SignupWithEmailComponent {
     )
 
     this.get_Institute()
-    
+
     this._crud.get_countery().subscribe(
       (res: any) => {
         console.log(res);
@@ -89,7 +86,7 @@ export class SignupWithEmailComponent {
   }
   get_inst_id_by_course(inst_id: string) {
     console.log(inst_id, 'id');
-    
+
     this._crud.get_select_course(inst_id).subscribe(
       (res: any) => {
         this.courses = res;

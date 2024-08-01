@@ -79,6 +79,8 @@ export class ForgetPasswordComponent implements OnInit {
 
   }
   verifyOTP(otp: any) {
+    console.log(otp, 'otp fill');
+    
     const fromdata = new FormData()
     fromdata.append('OTP', otp)
     this._crud.veryfy_otpFrogetPassword(this.email, fromdata).subscribe(
