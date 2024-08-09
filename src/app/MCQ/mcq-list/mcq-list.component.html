@@ -7,16 +7,17 @@
     <div id="qustionarea">
         <div class="btnarea">
             <div *ngFor="let question of mcq_data; let i = index">
-                <button mat-icon-button *ngIf="mcq_data?.length != qustion_no+1" color="primary" (click)="OnNext()">
+                <button [disabled]="qustion_no+1 != i " mat-icon-button *ngIf="mcq_data?.length != qustion_no+1"
+                    color="primary" (click)="OnNext(i)">
                     {{ i + 1 }}
                 </button>
             </div>
 
-            <button *ngIf="mcq_data?.length == qustion_no+1" color="primary" (click)="finalResult()">
+            <button *ngIf="mcq_data?.length == qustion_no+1" class="reviewBtn" (click)="finalResult()">
                 Result<mat-icon>keyboard_arrow_right</mat-icon>
             </button>
 
-            <button *ngIf="mcq_data?.length == qustion_no+1" color="primary" (click)="review()">
+            <button *ngIf="mcq_data?.length == qustion_no+1" class="reviewBtn" (click)="review()">
                 Review <mat-icon>keyboard_arrow_right</mat-icon>
             </button>
 

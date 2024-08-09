@@ -110,13 +110,21 @@ export class McqListComponent implements OnInit {
   }
 
   qustionChange(num: number) {
+    console.log(this.mcq_data);
     this.one_mcq_data = this.mcq_data[num]
+    
   }
 
-  OnNext() {
+  OnNext(curValue: any) {
+    console.log(curValue);
+
+    // return
+
     this.isAnswered = false
     this.qustion_no = this.qustion_no + 1
     this.qustionChange(this.qustion_no)
+
+    this.qustionChange(curValue)
 
     var options = document.querySelectorAll('.opction');
     options.forEach(function (opt) {
@@ -197,10 +205,10 @@ export class McqListComponent implements OnInit {
 
           }
           this._dilog.open(ResultComponent, {
-            width: '310px',
-            maxWidth: '310px',
-            height: 'auto',
-            maxHeight: '80vh',
+            width: '100%',
+            maxWidth: '100vh',
+            height: '100%',
+            maxHeight: '100vh',
             panelClass: 'custom',
             data: res_data
 

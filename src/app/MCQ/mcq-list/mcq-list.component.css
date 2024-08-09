@@ -91,6 +91,8 @@ mat-toolbar {
 .btnarea {
     width: 100%;
     display: flex;
+    overflow: auto;
+    gap: 10px;
     justify-content: space-around;
 
 }
@@ -99,18 +101,23 @@ mat-toolbar {
 .btnarea button {
     width: 40px;
     height: 40px;
-    border: red solid white;
     border: 1px solid white;
     margin-bottom: 16px;
-    /* height: 50px;
-    padding: 5px 15px 10px 15px;
-    background-color: var(--button);
-    font-size: 18px;
-    color: whitesmoke;
-    box-shadow: 0 1px 2px #757573;
-    border-radius: 30px;
-    border: none;
-    outline: none; */
+    padding: 4px;
+}
+
+.reviewBtn{
+    background-color: #283747;
+    width: 100px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    color: #fbfcfc;
+}
+
+.reviewBtn mat-icon {
+    position: unset !important;
 }
 
 .btnarea mat-icon {
