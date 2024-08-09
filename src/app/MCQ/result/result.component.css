@@ -19,7 +19,7 @@
     width: 150px;
     height: 150px;
     border-radius: 100%;
-    background-color: rgba(255, 255, 255, 0.2); 
+    background-color: rgba(255, 255, 255, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@
     width: 120px;
     height: 120px;
     border-radius: 100%;
-    background-color: rgba(255, 255, 255, 0.5); 
+    background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@
     width: 100px;
     height: 100px;
     border-radius: 100%;
-    background-color: #fff; 
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,21 +68,23 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.conttentbox{
+.conttentbox {
     width: calc(50% - 24px);
     height: calc(calc(60px - 24px));
     margin: 2px;
     text-align: start;
     float: left;
-    background: red;
     padding: 10px;
+}
+
+.conttentbox>p {
+    margin-left: 20px;
 }
 
 mat-toolbar {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border-bottom: 0.1px solid #e7e7e7;
     background-color: white;
 }
 
@@ -90,4 +92,21 @@ mat-toolbar>img {
     margin-right: 5px;
     width: 100%;
     height: 68px;
+}
+
+.sharebox {
+    width: 100%;
+    height: calc(100vh - 350px);
+    margin-top: 100px;
+}
+.sharearea{
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+.sharearea>.box{
+    width: 100px;
+    margin: 10px 10px 0px 10px;
 }

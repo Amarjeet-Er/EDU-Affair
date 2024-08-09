@@ -1,10 +1,4 @@
 <div id="wrapper">
-    <!-- <mat-toolbar>
-        <img [src]="login_data.companyProfile ? imgUrl+login_data.companyProfile :'../../../assets/icon/macreelicon.png'"
-            alt="institute logo">
-        <button mat-mini-fab color="warn" mat-dialog-close> <mat-icon>close</mat-icon></button>
-    </mat-toolbar> -->
-
     <div id="imgarea" mat-dialog-close>
         <div class="result1">
             <div class="result2">
@@ -25,43 +19,60 @@
     </div>
 
     <div id="contentarea">
-        <div class="content_area">
-            <div class="conttentbox">
-                <li>
-                    100%
-                </li>
-                <span>Complication</span>
-            </div>
-            <div class="conttentbox">
-                <p>Total Question {{total_qty}}</p>
-            </div>
-            <div class="conttentbox">
-                <p>Correct</p> {{correct}}
-            </div>
-            <div class="conttentbox">
-
-            </div>
+        <div class="conttentbox">
+            <li style="color: blue;">
+                100%
+            </li>
+            <p>Complication</p>
         </div>
-        <!-- <h1> {{score}}% Score</h1>
-        <h3>{{user_name.Name}}</h3> -->
-        <!-- <h3>Quiz completed successfully.</h3> -->
-        <!-- <p>
-            Out of {{total_qty}} questions your
-            <b style="color: rgb(14, 73, 14);"> {{correct}} </b>
-            answers are <b style="color: rgb(14, 73, 14);"> correct </b>
-        </p>
+        <div class="conttentbox">
+            <li style="color: blue;">
+                {{total_qty}}
+            </li>
+            <p>Total Question</p>
+        </div>
+        <div class="conttentbox">
+            <li style="color: green;">
+                {{correct}}
+            </li>
+            <p>Correct</p>
+        </div>
+        <div class="conttentbox">
+            <li style="color: red;">
+                {{score}}
+            </li>
+            <p>Wrong</p>
+        </div>
 
-        <div class="institute_name">
-            <a href="https://eduaffair.in/" target="_blank">
-                <p>Powered By:- <b style="color: #119895;">EDU Affair</b> </p>
-            </a>
+    </div>
+
+
+
+    <div class="sharebox">
+        <!-- <div class="sharearea">
+            <div class="box">
+                <button mat-icon-button>
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                <p>Review</p>
+            </div>
+            <div class="box">
+                <button mat-icon-button>
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                <p>Review</p>
+            </div>
+            <div class="box">
+                <button mat-icon-button>
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                <p>Review</p>
+            </div>
         </div> -->
 
-         <mat-toolbar>
-        <img [src]="login_data.companyProfile ? imgUrl+login_data.companyProfile :'../../../assets/icon/macreelicon.png'"
-            alt="institute logo">
-        <button mat-mini-fab color="warn" mat-dialog-close> <mat-icon>close</mat-icon></button>
-    </mat-toolbar>
-
+        <mat-toolbar>
+            <img [src]="login_data.companyProfile ? imgUrl+login_data.companyProfile :'../../../assets/icon/macreelicon.png'"
+                alt="institute logo">
+        </mat-toolbar>
     </div>
 </div>
