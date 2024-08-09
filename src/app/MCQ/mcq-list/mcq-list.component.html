@@ -5,43 +5,60 @@
         <span></span>
     </mat-toolbar>
     <div id="qustionarea">
-        <div class="qustion">
-            <span><b>{{qustion_no+1}}.</b> &nbsp; <p [innerHTML]="one_mcq_data?.QuestionName"></p> </span>
-        </div>
-        <div class="qyt">
-            <div class="box">
-                <button mat-mini-fab class="btn">A</button>
-                <div [ngClass]="isAnswered === true && one_mcq_data.OptionA === one_mcq_data.CorrectAns ? 'correct' : 'opction' "
-                    (click)="OnCheck(one_mcq_data.OptionA, $event.target)">
-                    {{one_mcq_data?.OptionA}}
-                </div>
-            </div>
-
-            <div class="box">
-                <button class="btn" mat-mini-fab>B</button>
-                <div [ngClass]="isAnswered === true && one_mcq_data.OptionB === one_mcq_data.CorrectAns ? 'correct' : 'opction'
-             " (click)="OnCheck(one_mcq_data.OptionB , $event.target )">
-                    &nbsp; {{one_mcq_data?.OptionB}}
-                </div>
-            </div>
-            <div class="box">
-                <button class="btn" mat-mini-fab>C</button>
-                <div [ngClass]="isAnswered === true && one_mcq_data.OptionC === one_mcq_data.CorrectAns ? 'correct' : 'opction' "
-                    (click)="OnCheck(one_mcq_data.OptionC, $event.target)">
-                    &nbsp; {{one_mcq_data?.OptionC}}</div>
-            </div>
-            <div class="box">
-                <button mat-mini-fab class="btn">D</button>
-                <div [ngClass]="isAnswered === true && one_mcq_data.OptionD === one_mcq_data.CorrectAns ? 'correct' : 'opction' "
-                    (click)="OnCheck(one_mcq_data.OptionD , $event.target)">
-                    &nbsp; {{one_mcq_data?.OptionD}}</div>
-            </div>
-        </div>
-
         <div class="btnarea">
-            <!-- <button color="primary" (click)="OnPri()">
-                <mat-icon>keyboard_arrow_left</mat-icon> PREVIOUS
-            </button> -->
+            <div *ngFor="let question of mcq_data; let i = index">
+                <button mat-icon-button *ngIf="mcq_data?.length != qustion_no+1" color="primary" (click)="OnNext()">
+                    {{ i + 1 }}
+                </button>
+            </div>
+
+            <button *ngIf="mcq_data?.length == qustion_no+1" color="primary" (click)="finalResult()">
+                Result<mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+
+            <button *ngIf="mcq_data?.length == qustion_no+1" color="primary" (click)="review()">
+                Review <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+
+        </div>
+
+        <div class="questionbox">
+            <div class="qustion">
+                <span><b>{{qustion_no+1}}.</b> &nbsp; <p [innerHTML]="one_mcq_data?.QuestionName"></p> </span>
+            </div>
+            <div class="qyt">
+                <div class="box">
+                    <button mat-mini-fab class="btn">A</button>
+                    <div [ngClass]="isAnswered === true && one_mcq_data.OptionA === one_mcq_data.CorrectAns ? 'correct' : 'opction' "
+                        (click)="OnCheck(one_mcq_data.OptionA, $event.target)">
+                        {{one_mcq_data?.OptionA}}
+                    </div>
+                </div>
+
+                <div class="box">
+                    <button class="btn" mat-mini-fab>B</button>
+                    <div [ngClass]="isAnswered === true && one_mcq_data.OptionB === one_mcq_data.CorrectAns ? 'correct' : 'opction'
+             " (click)="OnCheck(one_mcq_data.OptionB , $event.target )">
+                        &nbsp; {{one_mcq_data?.OptionB}}
+                    </div>
+                </div>
+                <div class="box">
+                    <button class="btn" mat-mini-fab>C</button>
+                    <div [ngClass]="isAnswered === true && one_mcq_data.OptionC === one_mcq_data.CorrectAns ? 'correct' : 'opction' "
+                        (click)="OnCheck(one_mcq_data.OptionC, $event.target)">
+                        &nbsp; {{one_mcq_data?.OptionC}}</div>
+                </div>
+                <div class="box">
+                    <button mat-mini-fab class="btn">D</button>
+                    <div [ngClass]="isAnswered === true && one_mcq_data.OptionD === one_mcq_data.CorrectAns ? 'correct' : 'opction' "
+                        (click)="OnCheck(one_mcq_data.OptionD , $event.target)">
+                        &nbsp; {{one_mcq_data?.OptionD}}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="btnarea">
+   
             <button *ngIf="mcq_data?.length != qustion_no+1" color="primary" (click)="OnNext()">
                 NEXT <mat-icon>keyboard_arrow_right</mat-icon>
             </button>
@@ -50,13 +67,12 @@
                 Result<mat-icon>keyboard_arrow_right</mat-icon>
             </button>
 
-            <button *ngIf="mcq_data?.length == qustion_no+1" color="primary" (click)="review()" >
+            <button *ngIf="mcq_data?.length == qustion_no+1" color="primary" (click)="review()">
                 Review <mat-icon>keyboard_arrow_right</mat-icon>
             </button>
 
-        </div>
+        </div> -->
 
     </div>
 
 </div>
-

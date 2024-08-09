@@ -64,7 +64,8 @@ mat-sidenav {
 
 
 .buynowcard {
-    background-color: #78abf7;
+    background-color: #895f58;
+    color: white;
 }
 
 .buynowcard div {
@@ -74,7 +75,7 @@ mat-sidenav {
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
-    color: #000000d0;
+    color: white;
     padding-left: 10px;
 }
 
@@ -108,7 +109,7 @@ mat-sidenav {
 .main {
     width: 100%;
     height: calc(100vh - 120px);
-    overflow:auto;
+    overflow: auto;
     z-index: 1;
 }
 
@@ -139,7 +140,6 @@ mat-sidenav {
 }
 
 #footer button:hover {
-    color: #0f4290;
     background-color: #b7cef2;
 }
 
@@ -156,7 +156,11 @@ a span {
     top: -8px;
 }
 
-.expireDate{
+a img {
+    filter: hue-rotate(144deg);
+}
+
+.expireDate {
     color: whitesmoke;
     font-size: 16px;
     position: relative;
