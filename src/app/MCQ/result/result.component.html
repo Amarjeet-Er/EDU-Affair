@@ -1,78 +1,71 @@
-<div id="wrapper">
-    <div id="imgarea" mat-dialog-close>
-        <div class="result1">
-            <div class="result2">
-                <div class="result3">
-                    <div>
-                        <span> Total Score </span><br>
-                        <b>{{score}}</b><br>
-                        <span>Out of {{total_qty}}</span>
-                    </div>
+<div class="wrapper">
+    <div class="top">
+        <img src="../../../assets/icon/party_craker.png" alt="">
+        <div class="round_1">
+            <div class="round_2">
+                <div class="round_3">
+                    <span>Total Score</span>
+                    <h3>{{correct}}</h3>
+                    <span>Out of {{total_qty}}</span>
                 </div>
             </div>
         </div>
-        <!-- <div class="result2"></div>
-        <div class="result3"></div> -->
-        <!-- <div class="res" *ngIf="score < 40">Poor</div>
-        <div class="res" *ngIf="score >= 40 && score < 65">Good</div>
-        <div class="res" *ngIf="score >= 65">Excellent</div> -->
-    </div>
-
-    <div id="contentarea">
-        <div class="conttentbox">
-            <li style="color: blue;">
-                100%
-            </li>
-            <p>Complication</p>
-        </div>
-        <div class="conttentbox">
-            <li style="color: blue;">
-                {{total_qty}}
-            </li>
-            <p>Total Question</p>
-        </div>
-        <div class="conttentbox">
-            <li style="color: green;">
-                {{correct}}
-            </li>
-            <p>Correct</p>
-        </div>
-        <div class="conttentbox">
-            <li style="color: red;">
-                {{score}}
-            </li>
-            <p>Wrong</p>
-        </div>
 
     </div>
-
-
-
-    <div class="sharebox">
-        <!-- <div class="sharearea">
-            <div class="box">
-                <button mat-icon-button>
-                    <mat-icon>visibility</mat-icon>
-                </button>
-                <p>Review</p>
+    <div class="detailsBox">
+        <div class="info">
+            <div class="dot" style="background-color: blue;"></div>
+            <div class="infoText">
+                <span style="color: blue;">{{score}}%</span>
+                <span>Complication</span>
             </div>
-            <div class="box">
-                <button mat-icon-button>
-                    <mat-icon>visibility</mat-icon>
-                </button>
-                <p>Review</p>
+        </div>
+        <div class="info">
+            <div class="dot" style="background-color: blue;"></div>
+            <div class="infoText">
+                <span style="color: blue;">{{total_qty}}</span>
+                <span>Total Question</span>
             </div>
-            <div class="box">
-                <button mat-icon-button>
-                    <mat-icon>visibility</mat-icon>
-                </button>
-                <p>Review</p>
+        </div>
+        <div class="info">
+            <div class="dot" style="background-color: green;"></div>
+            <div class="infoText">
+                <span style="color: green;">{{correct}}</span>
+                <span>Correct</span>
             </div>
+        </div>
+        <div class="info">
+            <div class="dot" style="background-color: red;"></div>
+            <div class="infoText">
+                <span style="color: red;">{{wrong}}</span>
+                <span>Wrong</span>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+
+        <div class="box" mat-dialog-close="true" routerLink="/home">
+            <div class="img"><mat-icon>home</mat-icon>
+            </div>
+            <span>Home</span>
+        </div>
+
+        <div class="box" mat-dialog-close="true" routerLink="/mcqreview">
+            <div class="img"><mat-icon>remove_red_eye</mat-icon>
+            </div>
+            <span>Review Answer</span>
+        </div>
+
+        <!-- <div class="box" >
+            <div class="img"><mat-icon>share</mat-icon>
+            </div>
+            <span>Share</span>
         </div> -->
 
-        <mat-toolbar>
-            <img [src]="login_data.companyProfile ? imgUrl+login_data.companyProfile :'../../../assets/icon/macreelicon.png'"
-                alt="institute logo">
-        </mat-toolbar>
+    </div>
+    <div class="footer">
+        <span>Powered By </span>
+        <img [src]="login_data.companyProfile ? imgUrl+login_data.companyProfile :'../../../assets/icon/macreelicon.png'"
+            alt="institute logo">
     </div>
 </div>

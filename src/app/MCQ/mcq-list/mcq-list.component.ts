@@ -112,7 +112,7 @@ export class McqListComponent implements OnInit {
   qustionChange(num: number) {
     console.log(this.mcq_data);
     this.one_mcq_data = this.mcq_data[num]
-    
+
   }
 
   OnNext(curValue: any) {
@@ -194,15 +194,18 @@ export class McqListComponent implements OnInit {
     this._crud.get_review_mcq(this.login_data.inst_id, this.login_data.id).subscribe(
       (res: any) => {
         if (res.length > 0) {
-          // this._shared.     
-          const qno = this.qustion_no + 1
-          let percentage = (this.result_data / qno) * 100
+          const totalQuestions = res.length;
+          const qno = this.qustion_no + 1;
+          let percentage = (this.result_data / qno) * 100;
+          const correctAnswers = this.result_data;
+          const wrongAnswers = totalQuestions - correctAnswers;
+
           const res_data = {
+            wrong: wrongAnswers,
             total_qty: qno,
             correct_ans: this.result_data,
             percentage: percentage,
             totalMarks: res.length
-
           }
           this._dilog.open(ResultComponent, {
             width: '100%',

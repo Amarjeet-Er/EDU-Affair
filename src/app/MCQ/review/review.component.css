@@ -47,7 +47,7 @@ mat-toolbar {
     height: auto;
     background-color: #cddce7;
     margin: 20px 0px;
-    border-radius: 50px;
+    border-radius: 12px;
     font-size: 15px;
     /* padding-left: 55px; */
     padding: 20px 5px 20px 55px;
@@ -108,7 +108,7 @@ mat-toolbar {
     width: calc(100% - 55px);
     height: auto;
     margin: 20px 0px;
-    border-radius: 50px;
+    border-radius: 12px;
     font-size: 15px;
     padding: 20px 5px 20px 55px;
     display: flex;
@@ -137,7 +137,7 @@ mat-toolbar {
     width: calc(100% - 55px);
     height: auto;
     margin: 20px 0px;
-    border-radius: 50px;
+    border-radius: 12px;
     font-size: 15px;
     padding: 20px 5px 20px 55px;
     display: flex;

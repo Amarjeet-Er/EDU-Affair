@@ -13,6 +13,7 @@ export class ResultComponent implements OnInit {
   correct = 0
   score = 0
   totalMark = 0
+  wrong = 0
   login: any;
   login_data: any;
   imgUrl: any
@@ -43,6 +44,7 @@ export class ResultComponent implements OnInit {
     this.total_qty = this.dialogData.total_qty
     this.correct = this.dialogData.correct_ans
     this.totalMark = this.dialogData.totalMarks
+    this.wrong = this.dialogData.wrong
     this.score = Math.round(this.dialogData.percentage)
     console.log(this.totalMark, 'dsdsds');
 

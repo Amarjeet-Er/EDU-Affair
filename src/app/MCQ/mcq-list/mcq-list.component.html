@@ -13,7 +13,7 @@
                 </button>
             </div>
 
-            <button  class="reviewBtn" (click)="finalResult()">
+            <button *ngIf="mcq_data?.length == qustion_no+1" class="reviewBtn" (click)="finalResult()">
                 Result<mat-icon>keyboard_arrow_right</mat-icon>
             </button>
 
