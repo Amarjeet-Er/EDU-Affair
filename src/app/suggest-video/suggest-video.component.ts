@@ -79,9 +79,7 @@ export class SuggestVideoComponent implements OnInit {
     console.log(instId,'inst is');
     this._crud.get_Suggestionvideo(data).subscribe(
       (res: any) => {
-        // this.video_data=res
-        this.video_data = res.filter((video: any) => video.VideoType === "Paid");
-        console.log(this.video_data, 'video');
+        this.video_data = res
       }
     )
   }

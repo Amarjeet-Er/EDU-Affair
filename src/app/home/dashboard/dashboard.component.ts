@@ -73,7 +73,7 @@ export class DashboardComponent implements OnInit {
   get_free_video() {
     this._crud.get_free_Video(this.login_data.inst_id).subscribe(
       (res: any) => {
-        this.free_video_data = res.filter((free_video: any) => free_video.VideoType === "Unpaid");
+        this.free_video_data = res
       }
     )
   }
@@ -114,7 +114,7 @@ export class DashboardComponent implements OnInit {
 
     this._crud.get_Suggestionvideo(data).subscribe(
       (res: any) => {
-        this.Suggestionvideo = res.filter((video: any) => video.VideoType === "Paid");
+        this.Suggestionvideo = res
       }
     )
   }
@@ -163,7 +163,7 @@ export class DashboardComponent implements OnInit {
       const deviesId = await Device.getId();
       const info = await Device.getInfo();
       // this.updateDeviesId(deviesId.identifier, info.model)
-      if (deviesId.identifier == this.user_data.DeviceId) {
+      if (deviesId.identifier !== this.user_data.DeviceId) {
         this._shared.mcqType.next('suggess')
         this._routing.navigate(['/mcqList'])
       } else {
@@ -178,7 +178,7 @@ export class DashboardComponent implements OnInit {
       const deviesId = await Device.getId();
       const info = await Device.getInfo();
       // this.updateDeviesId(deviesId.identifier, info.model)
-      if (deviesId.identifier == this.user_data.DeviceId) {
+      if (deviesId.identifier !== this.user_data.DeviceId) {
         this._routing.navigate(['/suggestvideo'], data)
       } else {
         this._shared.tostErrorTop(`You can watch paid videos only on registered devices. Please check your device's ID in your profile and contact us.`)

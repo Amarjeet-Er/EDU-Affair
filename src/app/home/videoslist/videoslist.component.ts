@@ -62,11 +62,9 @@ export class VideoslistComponent implements OnInit {
   get_videoList(id: number) {
     this._crud.get_videos(this.login_id.inst_id, id).subscribe(
       (res: any) => {
-        if (res && res) {
-          this.video_data = res.filter((video: any) => video.VideoType === "Paid");
-          this.filter_data = res.filter((video: any) => video.VideoType === "Paid");
-          this.subject = this.video_data[0].Unit;
-        }
+        this.video_data = res
+        this.filter_data = res
+        this.subject = this.video_data[0].Unit;
       },
       (err: any) => {
         console.log(err);
@@ -103,7 +101,7 @@ export class VideoslistComponent implements OnInit {
       const deviesId = await Device.getId();
       const info = await Device.getInfo();
       // this.updateDeviesId(deviesId.identifier, info.model)
-      if (deviesId.identifier == this.login_data.DeviceId) {
+      if (deviesId.identifier !== this.login_data.DeviceId) {
         this._router.navigate(['/plyvideo'])
         this._shared.video_id.next(id)
       } else {

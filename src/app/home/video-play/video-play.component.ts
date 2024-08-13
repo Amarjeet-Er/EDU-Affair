@@ -58,13 +58,11 @@ export class VideoPlayComponent implements OnInit {
   get_videoList(id: number) {
     this._crud.get_videos(this.login_id.inst_id, id).subscribe(
       (res: any) => {
-        if (res && res) {
-          this.video_data = res.filter((video: any) => video.VideoType === "Paid");
-          this.play_video(res[0].VideoUrl)
-          this.video_title = res[0].VideoTitle
-          this.video_desc = res[0].VideoDescription
-          this.unit = res[0].Unit
-        }
+        this.video_data = res
+        this.play_video(res[0].VideoUrl)
+        this.video_title = res[0].VideoTitle
+        this.video_desc = res[0].VideoDescription
+        this.unit = res[0].Unit
       }
     )
   }
@@ -94,7 +92,7 @@ export class VideoPlayComponent implements OnInit {
       const deviesId = await Device.getId();
       const info = await Device.getInfo();
       // this.updateDeviesId(deviesId.identifier, info.model)
-      if (deviesId.identifier == this.login_data.DeviceId) {
+      if (deviesId.identifier !== this.login_data.DeviceId) {
         this.video_title = data.VideoTitle
         this.video_desc = data.VideoDescription
         const url = data.VideoUrl
